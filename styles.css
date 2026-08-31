@@ -178,3 +178,16 @@ header.nav nav.links {
 .nav .links {
     display: none !important;
 }
+/* Mobile navigation fix */
+@media (max-width: 768px) {
+  header.nav nav.links {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+}
