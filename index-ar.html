@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aly Abdelaziz | الموارد البشرية • التطوير المهني • الذكاء الاصطناعي</title>
+
+<meta name="description" content="Aly Abdelaziz — متخصص في الموارد البشرية والتطوير المهني والقيادة وإدارة الأداء والذكاء الاصطناعي ومستقبل العمل.">
+<meta name="author" content="Aly Abdelaziz">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Aly Abdelaziz | متخصص موارد بشرية">
+<meta property="og:description" content="الموارد البشرية • التطوير المهني • القيادة • الذكاء الاصطناعي ومستقبل العمل">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/profile.png">
+
+<link rel="canonical" href="https://www.alyabdelaziz.com/index-ar.html">
+
+<style>
+:root{
+  --navy:#08243d;
+  --navy2:#0d3858;
+  --sky:#35bfe8;
+  --sky2:#9be9ff;
+  --gold:#d8aa45;
+  --gold2:#ffe08a;
+  --ink:#10283d;
+  --muted:#5c7183;
+  --paper:#f5fafc;
+  --white:#fff;
+  --line:#dce8ee;
+  --shadow:0 12px 35px rgba(8,36,61,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Tahoma,Helvetica,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.8;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(8,36,61,.98);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(155,233,255,.18);
+}
+.header-inner{
+  min-height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.brand{
+  font-family:Georgia,serif;font-size:34px;font-weight:800;
+  color:var(--gold2);letter-spacing:-2px;
+}
+.header-actions{display:flex;align-items:center;gap:12px}
+.menu-button,.language-button{
+  min-height:48px;padding:0 18px;border-radius:18px;
+  border:1px solid rgba(155,233,255,.30);
+  background:rgba(13,56,88,.75);color:#fff;cursor:pointer;
+  transition:.25s ease;
+}
+.menu-button:hover,.language-button:hover{
+  background:rgba(53,191,232,.16);border-color:var(--sky);
+}
+.menu-button{font-weight:700}
+.menu-panel{
+  position:absolute;right:4%;top:72px;width:min(390px,90vw);
+  background:#0b2d4b;
+  border:1px solid rgba(155,233,255,.30);
+  border-radius:22px;padding:18px;
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:.25s ease;
+}
+.menu-panel.open{opacity:1;visibility:visible;transform:translateY(0)}
+.menu-panel a{
+  display:block;padding:12px 16px;border-radius:12px;
+  color:#eaf7fc;font-size:17px;transition:.2s ease;
+}
+.menu-panel a:hover{background:rgba(53,191,232,.12);color:var(--gold2)}
+
+.hero{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(53,191,232,.16),transparent 32%),
+    linear-gradient(135deg,#08243d,#0d3858 65%,#123f60);
+  color:#fff;padding:90px 0 95px;overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:65px;
+}
+.eyebrow{color:var(--gold2);font-size:15px;font-weight:800;letter-spacing:4px;margin-bottom:22px}
+.hero h1{
+  font-size:clamp(58px,8vw,105px);line-height:.95;
+  letter-spacing:-5px;margin-bottom:32px;
+}
+.hero h1 span{color:var(--sky2)}
+.gold-line{
+  width:205px;height:7px;background:linear-gradient(90deg,var(--gold2),var(--gold));
+  border-radius:20px;margin-bottom:35px;
+}
+.hero-role{font-size:clamp(23px,3vw,34px);line-height:1.45;font-weight:800;margin-bottom:28px}
+.hero-message{font-size:clamp(24px,3vw,36px);line-height:1.5;color:#fff;max-width:720px;margin-bottom:28px}
+.hero-description{font-size:18px;color:#c7dce8;max-width:720px;margin-bottom:35px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:55px;padding:0 28px;border-radius:17px;font-weight:800;transition:.25s ease;
+}
+.btn-primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#13283b}
+.btn-secondary{border:1px solid rgba(155,233,255,.38);color:#fff;background:rgba(255,255,255,.04)}
+.btn:hover{transform:translateY(-2px)}
+.hero-photo-frame{
+  position:relative;overflow:hidden;border-radius:30px;
+  border:1px solid rgba(155,233,255,.30);
+  box-shadow:0 25px 70px rgba(0,0,0,.35);background:#071a2c;
+}
+.hero-photo img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;
+}
+.photo-caption{
+  position:absolute;right:20px;bottom:20px;left:20px;padding:15px 18px;
+  border-radius:15px;background:rgba(8,36,61,.84);
+  backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);color:#fff;
+}
+.photo-caption strong{display:block;color:var(--gold2)}
+
+section{scroll-margin-top:90px}
+.section{padding:90px 0}
+.section-light{background:var(--paper)}
+.section-white{background:#fff}
+.section-dark{background:linear-gradient(135deg,#08243d,#0d3858);color:#fff}
+.section-label{color:var(--gold);font-weight:900;letter-spacing:3px;font-size:14px;margin-bottom:15px}
+.section-title{font-size:clamp(38px,5vw,65px);line-height:1.2;letter-spacing:-2px;margin-bottom:20px}
+.section-intro{color:var(--muted);font-size:19px;max-width:800px;margin-bottom:45px}
+.section-dark .section-intro{color:#c8dce8}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+.about-text{font-size:19px;color:#51697b}
+.about-text p{margin-bottom:20px}
+.about-highlights{display:grid;gap:16px}
+.highlight{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:25px;box-shadow:var(--shadow);
+}
+.highlight strong{display:block;font-size:22px;color:var(--ink);margin-bottom:5px}
+
+.hr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hr-card{
+  background:#153f5e;border:1px solid rgba(155,233,255,.20);
+  border-radius:22px;padding:28px;min-height:220px;
+  position:relative;overflow:hidden;transition:.25s ease;
+}
+.hr-card:hover{transform:translateY(-5px);border-color:rgba(155,233,255,.48)}
+.hr-number{color:var(--gold2);font-weight:900;font-size:18px;margin-bottom:20px}
+.hr-card h3{font-size:23px;line-height:1.35;margin-bottom:15px}
+.hr-card p{color:#c7dce8;font-size:16px}
+
+.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.career-card{
+  padding:30px;border:1px solid var(--line);background:#fff;
+  border-radius:20px;box-shadow:var(--shadow);
+}
+.career-card h3{font-size:25px;margin-bottom:10px}
+.career-card p{color:var(--muted)}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:28px;box-shadow:var(--shadow);
+}
+.service h3{font-size:22px;margin-bottom:9px}
+.service p{color:var(--muted)}
+
+.ai-box{
+  background:#153f5e;border:1px solid rgba(155,233,255,.20);
+  border-radius:28px;padding:45px;max-width:950px;
+}
+.ai-box p{color:#c7dce8;font-size:19px;margin-bottom:18px}
+.ai-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}
+.ai-point{
+  padding:18px;border-radius:15px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.article{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:28px;box-shadow:var(--shadow);
+}
+.article small{color:var(--gold);font-weight:900}
+.article h3{font-size:23px;line-height:1.4;margin:12px 0}
+.article p{color:var(--muted)}
+
+.contact{text-align:center}
+.contact .section-intro{margin-left:auto;margin-right:auto}
+.socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}
+.social{
+  padding:14px 24px;border-radius:15px;
+  border:1px solid rgba(155,233,255,.30);
+  background:rgba(255,255,255,.05);color:#fff;font-weight:800;transition:.25s;
+}
+.social:hover{background:rgba(53,191,232,.15);border-color:var(--sky)}
+
+footer{background:#061c30;color:#9fb6c6;padding:35px 0;text-align:center;font-size:14px}
+footer strong{color:var(--gold2)}
+
+@media(max-width:900px){
+  .hero{padding:65px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:clamp(55px,15vw,90px)}
+  .hero-photo{max-width:650px;margin:auto}
+  .about-grid{grid-template-columns:1fr}
+  .hr-grid{grid-template-columns:repeat(2,1fr)}
+  .service-grid,.article-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .header-inner{min-height:72px}
+  .brand{font-size:30px}
+  .menu-button,.language-button{min-height:45px;padding:0 14px}
+  .menu-panel{top:68px;right:3%;width:94vw}
+  .hero{padding:55px 0 65px}
+  .hero h1{letter-spacing:-3px}
+  .hero-role{font-size:21px}
+  .hero-message{font-size:27px}
+  .hero-description{font-size:17px}
+  .hero-photo img{aspect-ratio:4/5}
+  .section{padding:65px 0}
+  .section-title{font-size:42px}
+  .hr-grid,.career-grid,.service-grid,.article-grid,.ai-points{grid-template-columns:1fr}
+  .hr-card{min-height:auto}
+  .ai-box{padding:28px}
+  .btn{width:100%}
+  .hero-buttons{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="الرئيسية">AA</a>
+
+    <div class="header-actions">
+      <button class="menu-button" id="menuButton" type="button"
+              aria-expanded="false" aria-controls="menuPanel">
+        ☰ القائمة
+      </button>
+
+      <button class="language-button" id="languageButton" type="button">
+        English
+      </button>
+    </div>
+  </div>
+
+  <nav class="menu-panel" id="menuPanel">
+    <a href="#home">الرئيسية</a>
+    <a href="#about">عني</a>
+    <a href="#hr">خبرات الموارد البشرية</a>
+    <a href="#career">التطوير المهني</a>
+    <a href="#performance">تطوير الأداء</a>
+    <a href="#ai">الذكاء الاصطناعي ومستقبل العمل</a>
+    <a href="#articles">رؤى ومقالات</a>
+    <a href="#contact">تواصل معي</a>
+    <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">مرحبًا بكم في عالمي</div>
+
+      <h1>
+        Aly<br>
+        <span>Abdelaziz</span>
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="hero-role">
+        متخصص موارد بشرية • التطوير المهني<br>
+        • القيادة • الذكاء الاصطناعي ومستقبل العمل
+      </div>
+
+      <div class="hero-message">
+        تمكين الأفراد.<br>
+        تطوير الأداء.<br>
+        تشكيل المسارات المهنية. والاستعداد للمستقبل.
+      </div>
+
+      <p class="hero-description">
+        قمت بتدريب الآلاف في مجالات الموارد البشرية والقيادة
+        والتواصل، وشاركت في أنشطة الاستشارات والتوظيف
+        واستقطاب المواهب.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#about">عني</a>
+        <a class="btn btn-secondary" href="#contact">لنتواصل</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="hero-photo-frame">
+        <img src="assets/profile.png"
+             alt="Aly Abdelaziz — متخصص موارد بشرية"
+             loading="eager">
+        <div class="photo-caption">
+          <strong>Aly Abdelaziz</strong>
+          الموارد البشرية • التطوير المهني • الذكاء الاصطناعي ومستقبل العمل
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-white" id="about">
+  <div class="container">
+    <div class="section-label">عني</div>
+    <h2 class="section-title">الخبرة والتدريب والممارسة العملية في الموارد البشرية</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          يتركز اهتمامي المهني عند تقاطع الموارد البشرية وتطوير الأفراد
+          والقيادة وإدارة الأداء والنمو المهني.
+        </p>
+        <p>
+          أؤمن بأن الموارد البشرية الفعالة لا تتعلق فقط بالسياسات والإجراءات،
+          بل بربط الأفراد والقدرات واحتياجات الأعمال لتحقيق قيمة تنظيمية مستدامة.
+        </p>
+        <p>
+          يجمع هذا الموقع رؤى عملية حول الموارد البشرية والمسارات المهنية
+          والأداء والقيادة والتواصل ومستقبل العمل.
+        </p>
+      </div>
+
+      <div class="about-highlights">
+        <div class="highlight">
+          <strong>الأفراد</strong>
+          بناء قدرات أقوى وعلاقات مهنية أكثر فاعلية.
+        </div>
+        <div class="highlight">
+          <strong>الأداء</strong>
+          تحويل التوقعات والتغذية الراجعة والتطوير إلى تقدم قابل للقياس.
+        </div>
+        <div class="highlight">
+          <strong>المستقبل</strong>
+          إعداد الأفراد والمنظمات لبيئات العمل المتغيرة.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="hr">
+  <div class="container">
+    <div class="section-label">خبرات الموارد البشرية</div>
+    <h2 class="section-title">رحلة متكاملة في الموارد البشرية — من الاستراتيجية إلى الأفراد والأداء والمكافآت</h2>
+    <p class="section-intro">
+      رؤية عملية لأهم وظائف الموارد البشرية وكيفية ترابطها مع القدرات التنظيمية
+      وأداء الأعمال.
+    </p>
+
+    <div class="hr-grid">
+      <article class="hr-card">
+        <div class="hr-number">01</div>
+        <h3>إدارة الموارد البشرية الاستراتيجية</h3>
+        <p>ترجمة توجهات الأعمال إلى استراتيجية للأفراد وأولويات القوى العاملة والقدرات التنظيمية.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">02</div>
+        <h3>تخطيط القوى العاملة</h3>
+        <p>تحديد أعداد القوى العاملة والمهارات والأدوار التي تحتاجها المنظمة خلال الفترة المقبلة.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">03</div>
+        <h3>التوظيف واستقطاب المواهب</h3>
+        <p>بناء أساليب فعالة لجذب المواهب وتقييمها واختيار الكفاءات المناسبة.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">04</div>
+        <h3>علاقات الموظفين</h3>
+        <p>دعم العلاقات المهنية والإيجابية والتواصل الفعال وحل الصراعات في بيئة العمل.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">05</div>
+        <h3>التعويضات والمزايا</h3>
+        <p>تصميم هياكل مكافآت منطقية تدعم العدالة والأداء واستقطاب الكفاءات.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">06</div>
+        <h3>سياسات الموارد البشرية والامتثال</h3>
+        <p>بناء أطر عملية للموارد البشرية تتوافق مع متطلبات المنظمة والقوانين المعمول بها.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">07</div>
+        <h3>التدريب والتطوير</h3>
+        <p>تحديد الاحتياجات التدريبية وبناء تدخلات تطويرية تحسن القدرات والأداء.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">08</div>
+        <h3>إدارة الأداء</h3>
+        <p>وضع توقعات واضحة وقياس الأداء والتغذية الراجعة وحوارات التطوير.</p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">09</div>
+        <h3>التعويضات والمكافآت</h3>
+        <p>ربط أنظمة المكافآت بالاتساق الداخلي والأداء وجذب الكفاءات والاحتفاظ بها.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light" id="career">
+  <div class="container">
+    <div class="section-label">التطوير المهني</div>
+    <h2 class="section-title">ابنِ مسارك المهني بوعي واتجاه واضح</h2>
+    <p class="section-intro">
+      التطوير المهني ليس مجرد البحث عن وظيفة أخرى؛ بل هو فهم نقاط القوة،
+      وبناء القدرات المناسبة، واتخاذ قرارات مهنية مقصودة.
+    </p>
+
+    <div class="career-grid">
+      <article class="career-card">
+        <h3>التقييم المهني</h3>
+        <p>فهم الاهتمامات ونقاط القوة والشخصية والاتجاه المهني المناسب.</p>
+      </article>
+
+      <article class="career-card">
+        <h3>التحول المهني Career Shift</h3>
+        <p>التخطيط لانتقال عملي إلى مجال مهني جديد أو إلى مسار الموارد البشرية.</p>
+      </article>
+
+      <article class="career-card">
+        <h3>العلامة المهنية الشخصية</h3>
+        <p>التعبير عن القيمة المهنية بوضوح من خلال السيرة الذاتية وLinkedIn والشبكات المهنية.</p>
+      </article>
+
+      <article class="career-card">
+        <h3>النمو المهني</h3>
+        <p>بناء المهارات والخبرات والحضور المهني الذي يدعم النمو طويل المدى.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white" id="performance">
+  <div class="container">
+    <div class="section-label">تطوير الأداء</div>
+    <h2 class="section-title">تعزيز الأداء والقدرات</h2>
+    <p class="section-intro">
+      دعم القدرات الشخصية والمهنية ضمن رحلة الموارد البشرية والأداء المتكاملة.
+    </p>
+
+    <div class="service-grid">
+      <article class="service">
+        <h3>تحليل الشخصية</h3>
+        <p>مدخل عملي لزيادة الوعي بالذات وتحسين التعاون مع الآخرين.</p>
+      </article>
+
+      <article class="service">
+        <h3>مهارات التواصل</h3>
+        <p>تواصل عملي للقادة والفرق والنمو المهني.</p>
+      </article>
+
+      <article class="service">
+        <h3>التأثير في الآخرين</h3>
+        <p>التأثير الأخلاقي والفعال في القرارات والعلاقات المهنية.</p>
+      </article>
+
+      <article class="service">
+        <h3>القيادة</h3>
+        <p>تطوير السلوكيات القيادية التي تحسن الأفراد والقرارات والنتائج.</p>
+      </article>
+
+      <article class="service">
+        <h3>حل الصراعات</h3>
+        <p>أساليب عملية لإدارة الخلافات والحفاظ على علاقات مهنية منتجة.</p>
+      </article>
+
+      <article class="service">
+        <h3>التوجيه وتطوير المسار</h3>
+        <p>دعم يركز على الفرد لتحقيق الأهداف واتخاذ القرارات والتطور المهني.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="ai">
+  <div class="container">
+    <div class="section-label">الذكاء الاصطناعي ومستقبل العمل</div>
+    <h2 class="section-title">القدرات الإنسانية في عالم يقوده الذكاء الاصطناعي</h2>
+    <p class="section-intro">
+      استكشاف التكنولوجيا مع الحفاظ على الحكم البشري والأخلاقيات والقدرات الإنسانية في المركز.
+    </p>
+
+    <div class="ai-box">
+      <p>
+        يغير الذكاء الاصطناعي طريقة عمل المؤسسات في التوظيف وتطوير الأفراد
+        وتحليل المعلومات وتصميم الوظائف.
+      </p>
+      <p>
+        المستقبل لا ينتمي فقط إلى من يستخدم الذكاء الاصطناعي، بل إلى من يستطيع
+        الجمع بين التكنولوجيا والحكم السليم والتواصل والإبداع والفهم الإنساني.
+      </p>
+
+      <div class="ai-points">
+        <div class="ai-point">الذكاء الاصطناعي في الموارد البشرية</div>
+        <div class="ai-point">مستقبل العمل</div>
+        <div class="ai-point">التعاون بين الإنسان والذكاء الاصطناعي</div>
+        <div class="ai-point">المهارات الرقمية</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light" id="articles">
+  <div class="container">
+    <div class="section-label">رؤى ومقالات</div>
+    <h2 class="section-title">أفكار عملية للمهنيين في عالم العمل الحديث</h2>
+    <p class="section-intro">
+      مقالات ورؤى عملية حول الموارد البشرية والمسارات المهنية والقيادة والأداء
+      والذكاء الاصطناعي ومستقبل العمل.
+    </p>
+
+    <div class="article-grid">
+      <article class="article">
+        <small>HR</small>
+        <h3>الدور الحديث للموارد البشرية</h3>
+        <p>كيف تنتقل الموارد البشرية من الدور الإداري إلى شريك استراتيجي في أداء الأعمال.</p>
+      </article>
+
+      <article class="article">
+        <small>CAREER</small>
+        <h3>كيف تقوم بعمل Career Shift إلى HR؟</h3>
+        <p>بداية عملية للمهنيين الذين يفكرون في الانتقال إلى مجال الموارد البشرية.</p>
+      </article>
+
+      <article class="article">
+        <small>AI</small>
+        <h3>الذكاء الاصطناعي ومستقبل العمل</h3>
+        <p>كيف يغير الذكاء الاصطناعي المهارات والوظائف والقدرات التنظيمية.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark contact" id="contact">
+  <div class="container">
+    <div class="section-label">لنتواصل</div>
+    <h2 class="section-title">لنطور مسارات مهنية ومنظمات أفضل</h2>
+    <p class="section-intro">
+      تابع الرحلة، واستكشف الرؤى، وتواصل عبر القنوات المهنية التالية.
+    </p>
+
+    <div class="socials">
+      <a class="social" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="social" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>Aly Abdelaziz</strong><br>
+    الموارد البشرية • التطوير المهني • القيادة • الذكاء الاصطناعي ومستقبل العمل
+    <br><br>
+    © <span id="year"></span> Aly Abdelaziz. جميع الحقوق محفوظة.
+  </div>
+</footer>
+
+<script>
+const menuButton = document.getElementById("menuButton");
+const menuPanel = document.getElementById("menuPanel");
+
+menuButton.addEventListener("click", function(){
+  const isOpen = menuPanel.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+
+document.querySelectorAll("#menuPanel a").forEach(function(link){
+  link.addEventListener("click", function(){
+    menuPanel.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("click", function(event){
+  if(!menuPanel.contains(event.target) && !menuButton.contains(event.target)){
+    menuPanel.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.getElementById("languageButton").addEventListener("click", function(){
+  window.location.href = "index.html";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
