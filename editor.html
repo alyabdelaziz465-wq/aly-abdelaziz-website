@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Article Editor | Aly Abdelaziz</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#eef2f5;color:#17202b;line-height:1.8}
+header{background:#071321;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+header b{color:#e8bd55}
+main{max-width:1000px;margin:30px auto;padding:15px}
+.card{background:#fff;border-radius:18px;padding:25px;box-shadow:0 12px 35px rgba(7,19,33,.12)}
+h1,h2{color:#071321}
+label{display:block;font-weight:bold;margin:17px 0 7px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ccd5dd;border-radius:10px;font:inherit}
+textarea{min-height:170px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+button{border:0;border-radius:10px;padding:12px 18px;font-weight:bold;cursor:pointer;margin:14px 5px 0 0}
+.primary{background:#d7ad43;color:#071321}.secondary{background:#071321;color:#fff}
+.notice{background:#fff8e8;border-right:4px solid #d7ad43;padding:14px;border-radius:8px}
+#preview{margin-top:25px;padding:25px;background:#f7f9fa;border-radius:14px}
+.en{direction:ltr;text-align:left}
+@media(max-width:700px){.row{grid-template-columns:1fr}main{padding:8px}}
+</style>
+</head>
+
+<body>
+<header>
+  <strong>AA <b>Aly Abdelaziz</b></strong>
+  <span>Private Article Editor</span>
+</header>
+
+<main>
+<div class="card">
+
+<h1>محرر المقالات | Article Editor</h1>
+
+<div class="notice">
+هذه صفحة خاصة لتجهيز المقالات. اكتب المقال ثم استخدم المعاينة أو حمّل ملف HTML.
+<br>
+<strong>ملاحظة:</strong> هذه نسخة Front-End وليست نظام دخول آمنًا؛ لا تضع فيها كلمات مرور أو مفاتيح GitHub.
+</div>
+
+<div class="row">
+  <div>
+    <label>عنوان المقال بالعربية</label>
+    <input id="titleAr" placeholder="مستقبل الموارد البشرية في عصر AI">
+  </div>
+  <div>
+    <label>English Title</label>
+    <input id="titleEn" class="en" placeholder="The Future of HR in the Age of AI">
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label>التصنيف</label>
+    <select id="category">
+      <option>HR</option>
+      <option>AI</option>
+      <option>CAREER</option>
+      <option>LEADERSHIP</option>
+      <option>MANAGEMENT</option>
+    </select>
+  </div>
+  <div>
+    <label>اسم ملف المقال</label>
+    <input id="filename" value="new-article.html" placeholder="future-of-hr.html">
+  </div>
+</div>
+
+<label>ملخص عربي | Arabic Summary</label>
+<textarea id="summaryAr" placeholder="اكتب ملخصًا قصيرًا للمقال..."></textarea>
+
+<label>English Summary</label>
+<textarea id="summaryEn" class="en" placeholder="Write a short summary..."></textarea>
+
+<label>المقال بالعربية | Arabic Article</label>
+<textarea id="bodyAr" placeholder="اكتب المقال هنا. افصل بين الفقرات بسطر فارغ."></textarea>
+
+<label>English Article</label>
+<textarea id="bodyEn" class="en" placeholder="Write the English version here."></textarea>
+
+<button class="primary" onclick="previewArticle()">معاينة | Preview</button>
+<button class="secondary" onclick="downloadArticle()">توليد ملف HTML | Generate HTML</button>
+
+<div id="preview"></div>
+
+</div>
+</main>
+
+<script>
+function esc(s){
+  return s.replace(/[&<>"']/g, function(m){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m];
+  });
+}
+
+function paras(s){
+  return s.split(/\n\s*\n/).filter(Boolean).map(function(x){
+    return '<p>'+esc(x).replace(/\n/g,'<br>')+'</p>';
+  }).join('');
+}
+
+function getData(){
+  return {
+    titleAr:document.getElementById('titleAr').value.trim(),
+    titleEn:document.getElementById('titleEn').value.trim(),
+    category:document.getElementById('category').value,
+    filename:document.getElementById('filename').value.trim() || 'new-article.html',
+    summaryAr:document.getElementById('summaryAr').value.trim(),
+    summaryEn:document.getElementById('summaryEn').value.trim(),
+    bodyAr:document.getElementById('bodyAr').value,
+    bodyEn:document.getElementById('bodyEn').value
+  };
+}
+
+function previewArticle(){
+  var d=getData();
+
+  document.getElementById('preview').innerHTML =
+    '<h2>'+esc(d.titleAr)+'</h2>'+
+    '<p class="en"><strong>'+esc(d.titleEn)+'</strong></p>'+
+    '<p><strong>'+esc(d.category)+'</strong></p>'+
+    '<div class="notice"><strong>ملخص:</strong> '+esc(d.summaryAr)+'</div>'+
+    '<div>'+paras(d.bodyAr)+'</div>'+
+    '<hr>'+
+    '<h2 class="en">'+esc(d.titleEn)+'</h2>'+
+    '<div class="en">'+paras(d.bodyEn)+'</div>';
+}
+
+function downloadArticle(){
+  var d=getData();
+
+  if(!d.titleAr || !d.titleEn || !d.bodyAr || !d.bodyEn){
+    alert('أكمل العنوان والمحتوى بالعربية والإنجليزية أولًا.');
+    return;
+  }
+
+  var filename=d.filename.toLowerCase().replace(/[^a-z0-9._-]/g,'-');
+  if(!filename.endsWith('.html')) filename += '.html';
+
+  var html='<!doctype html>'+
+  '<html lang="ar" dir="rtl">'+
+  '<head>'+
+  '<meta charset="utf-8">'+
+  '<meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<meta name="description" content="'+esc(d.summaryAr)+'">'+
+  '<title>'+esc(d.titleAr)+' | Aly Abdelaziz</title>'+
+  '<style>'+
+  '*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#eef2f5;color:#17202b;line-height:1.9}'+
+  '.top{background:#071321;color:#fff;padding:18px 6%}.top b{color:#e8bd55}'+
+  '.hero{background:linear-gradient(135deg,#071321,#102438);color:#fff;padding:55px 7%;text-align:center}'+
+  '.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.2}.hero small{display:block;color:#e8bd55;font-size:.5em;margin-top:12px}'+
+  '.card{max-width:900px;margin:-25px auto 50px;background:#fff;border-radius:20px;padding:30px 7%;box-shadow:0 15px 40px rgba(7,19,33,.12)}'+
+  '.summary{background:#fff9e9;border-right:5px solid #e8bd55;padding:20px;border-radius:10px}'+
+  '.en{direction:ltr;text-align:left;background:#f5f7f9;border-left:4px solid #d7ad43;padding:18px;border-radius:10px}'+
+  'h2{color:#071321;margin-top:40px}footer{background:#071321;color:#fff;text-align:center;padding:25px}'+
+  '@media(max-width:600px){.card{margin:0;border-radius:0;padding:25px 6%}}'+
+  '</style>'+
+  '</head>'+
+  '<body>'+
+  '<header class="top">AA <b>Aly Abdelaziz</b></header>'+
+  '<section class="hero">'+
+  '<div>INSIGHTS • '+esc(d.category)+'</div>'+
+  '<h1>'+esc(d.titleAr)+'<small>'+esc(d.titleEn)+'</small></h1>'+
+  '</section>'+
+  '<main class="card">'+
+  '<div class="summary"><strong>ملخص المقال | Summary</strong><p>'+esc(d.summaryAr)+'</p><div class="en">'+esc(d.summaryEn)+'</div></div>'+
+  '<h2>المقال | Article</h2>'+
+  '<div>'+paras(d.bodyAr)+'</div>'+
+  '<hr>'+
+  '<div class="en"><h2>'+esc(d.titleEn)+'</h2>'+paras(d.bodyEn)+'</div>'+
+  '</main>'+
+  '<footer>© Aly Abdelaziz • HR • Career Development • AI & Future of Work</footer>'+
+  '</body></html>';
+
+  var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+}
+</script>
+
+</body>
+</html>
