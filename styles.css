@@ -86,3 +86,7 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:25px 7vw;back
         min-width: auto;
     }
 }
+/* Hide old navigation links */
+.nav > .links {
+    display: none !important;
+}
