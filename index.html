@@ -1,22 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aly Abdelaziz | HR • Career Development • Leadership • AI & Future of Work</title>
+<title>Aly Abdelaziz | HR • Career Development • AI • Future of Work</title>
 
-<meta name="description" content="Aly Abdelaziz — HR professional, trainer and consultant focused on Human Resources, career development, leadership, performance, AI and the future of work.">
+<meta name="description"
+content="Aly Abdelaziz — HR professional focused on Human Resources, Career Development, Leadership, Performance, AI and the Future of Work.">
+
 <meta name="author" content="Aly Abdelaziz">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#08243d">
+
+<meta property="og:title" content="Aly Abdelaziz | HR Professional">
+<meta property="og:description"
+content="HR • Career Development • Leadership • AI & Future of Work">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/profile.png">
 
 <link rel="canonical" href="https://www.alyabdelaziz.com/">
 
 <style>
+
 :root{
   --navy:#08243d;
   --navy2:#0d3858;
+  --navy3:#123f60;
   --sky:#35bfe8;
   --sky2:#9be9ff;
   --gold:#d8aa45;
@@ -24,31 +33,29 @@
   --ink:#10283d;
   --muted:#5c7183;
   --paper:#f5fafc;
-  --white:#fff;
-  --line:#dbeaf1;
-  --shadow:0 18px 50px rgba(8,36,61,.11);
+  --white:#ffffff;
+  --line:#dce8ee;
+  --shadow:0 12px 35px rgba(8,36,61,.10);
 }
 
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:85px;
 }
 
 body{
-  margin:0;
-  font-family:Inter,"Segoe UI",Arial,sans-serif;
-  color:var(--ink);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
   background:var(--paper);
+  color:var(--ink);
   line-height:1.7;
-  overflow-x:hidden;
-}
-
-body[dir="rtl"]{
-  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
 }
 
 a{
@@ -65,6 +72,11 @@ button{
   font:inherit;
 }
 
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -76,107 +88,91 @@ button{
   background:rgba(8,36,61,.97);
   backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(155,233,255,.18);
-  color:#fff;
 }
 
 .header-inner{
-  max-width:1400px;
-  min-height:76px;
-  margin:auto;
-  padding:10px clamp(14px,4vw,54px);
+  min-height:78px;
   display:flex;
   align-items:center;
-  gap:14px;
+  justify-content:space-between;
+  gap:20px;
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
   font-family:Georgia,serif;
+  font-size:34px;
   font-weight:800;
-  font-size:32px;
   color:var(--gold2);
   letter-spacing:-2px;
-  white-space:nowrap;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .menu-button,
 .language-button{
-  border:1px solid rgba(155,233,255,.42);
-  background:rgba(13,56,88,.55);
-  color:#fff;
-  border-radius:15px;
-  min-height:45px;
-  padding:0 15px;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:18px;
+  border:1px solid rgba(155,233,255,.30);
+  background:rgba(13,56,88,.65);
+  color:white;
   cursor:pointer;
-  font-weight:800;
-  transition:.2s ease;
+  transition:.25s ease;
 }
 
 .menu-button:hover,
 .language-button:hover{
-  border-color:var(--sky2);
-  background:rgba(53,191,232,.12);
+  background:rgba(53,191,232,.16);
+  border-color:var(--sky);
 }
 
 .menu-button{
-  margin-left:auto;
-}
-
-.menu-icon{
-  font-size:19px;
-  margin-right:6px;
+  font-weight:700;
 }
 
 /* =========================
-   DROPDOWN MENU
+   MENU
 ========================= */
 
-.nav-panel{
-  position:fixed;
-  top:76px;
-  left:50%;
-  width:min(620px,calc(100% - 28px));
-  max-height:calc(100vh - 92px);
-  overflow:auto;
-  transform:translate(-50%,-15px);
-  background:rgba(8,43,69,.99);
-  border:1px solid rgba(155,233,255,.25);
-  border-top:0;
-  border-radius:0 0 24px 24px;
-  padding:10px;
-  box-shadow:0 25px 70px rgba(0,0,0,.30);
+.menu-panel{
+  position:absolute;
+  right:4%;
+  top:72px;
+  width:min(390px,90vw);
+  background:#0b2d4b;
+  border:1px solid rgba(155,233,255,.28);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+
   opacity:0;
   visibility:hidden;
-  pointer-events:none;
-  transition:.22s ease;
+  transform:translateY(-10px);
+  transition:.25s ease;
 }
 
-.nav-panel.open{
-  transform:translate(-50%,0);
+.menu-panel.open{
   opacity:1;
   visibility:visible;
-  pointer-events:auto;
+  transform:translateY(0);
 }
 
-.nav-panel a{
+.menu-panel a{
   display:block;
-  padding:11px 14px;
-  border-radius:11px;
-  color:#eefaff;
-  font-size:14px;
+  padding:12px 16px;
+  border-radius:12px;
+  color:#eaf7fc;
+  font-size:17px;
+  transition:.2s ease;
 }
 
-.nav-panel a:hover{
-  background:rgba(53,191,232,.14);
+.menu-panel a:hover{
+  background:rgba(53,191,232,.12);
   color:var(--gold2);
-}
-
-.nav-divider{
-  height:1px;
-  background:rgba(255,255,255,.10);
-  margin:8px 10px;
 }
 
 /* =========================
@@ -184,43 +180,38 @@ button{
 ========================= */
 
 .hero{
-  position:relative;
-  overflow:hidden;
   background:
-    radial-gradient(circle at 80% 18%,rgba(53,191,232,.24),transparent 29%),
-    radial-gradient(circle at 15% 85%,rgba(216,170,69,.13),transparent 25%),
-    linear-gradient(135deg,#06172c,#0b2b4c 58%,#0b3b5a);
-  color:#fff;
-  padding:78px clamp(20px,6vw,90px) 82px;
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(53,191,232,.16),
+      transparent 32%
+    ),
+    linear-gradient(135deg,#08243d,#0d3858 65%,#123f60);
+  color:white;
+  padding:90px 0 95px;
+  overflow:hidden;
 }
 
-.hero-inner{
-  max-width:1400px;
-  margin:auto;
+.hero-grid{
   display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:55px;
+  grid-template-columns:1.15fr .85fr;
   align-items:center;
-}
-
-.hero-copy{
-  max-width:760px;
+  gap:65px;
 }
 
 .eyebrow{
-  margin:0 0 14px;
   color:var(--gold2);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:4px;
+  margin-bottom:22px;
 }
 
 .hero h1{
-  font-size:clamp(60px,8vw,108px);
-  line-height:.88;
-  margin:0;
+  font-size:clamp(58px,8vw,105px);
+  line-height:.95;
   letter-spacing:-5px;
+  margin-bottom:32px;
 }
 
 .hero h1 span{
@@ -228,205 +219,159 @@ button{
 }
 
 .gold-line{
-  width:120px;
-  height:4px;
-  background:linear-gradient(90deg,var(--gold),var(--gold2));
-  margin:28px 0;
+  width:205px;
+  height:7px;
+  background:linear-gradient(90deg,var(--gold2),var(--gold));
+  border-radius:20px;
+  margin-bottom:35px;
 }
 
-.hero h2{
-  font-size:clamp(18px,2.3vw,29px);
-  line-height:1.4;
-  margin:0 0 20px;
+.hero-role{
+  font-size:clamp(23px,3vw,34px);
+  line-height:1.35;
+  font-weight:800;
+  margin-bottom:28px;
 }
 
-.tagline{
-  font-size:clamp(24px,3vw,38px);
-  line-height:1.28;
-  margin:0 0 20px;
-}
-
-.hero-text{
-  font-size:17px;
-  color:#cbe0ec;
+.hero-message{
+  font-size:clamp(24px,3vw,36px);
+  line-height:1.35;
+  color:white;
   max-width:720px;
+  margin-bottom:28px;
 }
 
-.actions{
+.hero-description{
+  font-size:18px;
+  color:#c7dce8;
+  max-width:720px;
+  margin-bottom:35px;
+}
+
+.hero-buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:11px;
-  margin-top:27px;
+  gap:14px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:48px;
-  padding:11px 20px;
-  border-radius:13px;
+  min-height:55px;
+  padding:0 28px;
+  border-radius:17px;
   font-weight:800;
-  transition:.2s ease;
+  transition:.25s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#13283b;
+}
+
+.btn-secondary{
+  border:1px solid rgba(155,233,255,.38);
+  color:white;
+  background:rgba(255,255,255,.04);
 }
 
 .btn:hover{
   transform:translateY(-2px);
 }
 
-.btn.primary{
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#12243a;
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.hero-photo{
+  position:relative;
 }
 
-.btn.ghost{
-  border:1px solid rgba(155,233,255,.5);
-  color:#fff;
-  background:rgba(255,255,255,.04);
+.hero-photo-frame{
+  position:relative;
+  overflow:hidden;
+  border-radius:30px;
+  border:1px solid rgba(155,233,255,.30);
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+  background:#071a2c;
 }
 
-.socials{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-top:19px;
-  color:#c4efff;
-  font-weight:800;
-  font-size:14px;
+.hero-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center top;
 }
 
-.socials a:hover{
+.photo-caption{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  right:20px;
+  padding:15px 18px;
+  border-radius:15px;
+  background:rgba(8,36,61,.78);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  color:white;
+}
+
+.photo-caption strong{
+  display:block;
   color:var(--gold2);
 }
 
 /* =========================
-   PORTRAIT
+   SECTION
 ========================= */
 
-.hero-visual{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:520px;
+section{
+  scroll-margin-top:90px;
 }
-
-.orb{
-  position:absolute;
-  width:470px;
-  height:470px;
-  border-radius:50%;
-  background:radial-gradient(
-    circle,
-    rgba(53,191,232,.22),
-    transparent 68%
-  );
-  filter:blur(3px);
-}
-
-.portrait-wrap{
-  position:relative;
-  width:min(455px,94%);
-  aspect-ratio:4/5;
-  border-radius:32px;
-  overflow:hidden;
-  border:1px solid rgba(155,233,255,.5);
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
-  background:#0b213a;
-}
-
-.portrait-wrap:before{
-  content:"";
-  position:absolute;
-  inset:12px;
-  border:1px solid rgba(255,224,138,.45);
-  border-radius:24px;
-  z-index:2;
-  pointer-events:none;
-}
-
-.portrait{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:69% center;
-  transform:scale(1.08);
-}
-
-/* =========================
-   VALUES
-========================= */
-
-.values{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  background:#fff;
-  border-bottom:1px solid var(--line);
-}
-
-.values article{
-  padding:28px 25px;
-  border-inline-end:1px solid var(--line);
-}
-
-.values article:last-child{
-  border:0;
-}
-
-.values span,
-.num{
-  color:var(--gold);
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.values h3{
-  margin:6px 0;
-  font-size:18px;
-}
-
-.values p{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
 
 .section{
-  padding:86px clamp(20px,6vw,90px);
-  max-width:1400px;
-  margin:auto;
+  padding:90px 0;
 }
 
-.section-inner{
-  max-width:1400px;
-  margin:auto;
+.section-light{
+  background:var(--paper);
 }
 
-.dark-section{
-  max-width:none;
-  background:linear-gradient(135deg,#081d36,#0d3b5a);
-  color:#fff;
+.section-white{
+  background:white;
 }
 
-.section-head{
-  max-width:930px;
-  margin-bottom:36px;
+.section-dark{
+  background:
+    linear-gradient(135deg,#08243d,#0d3858);
+  color:white;
 }
 
-.section h2{
-  font-size:clamp(33px,4.5vw,57px);
+.section-label{
+  color:var(--gold);
+  font-weight:900;
+  letter-spacing:4px;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.section-title{
+  font-size:clamp(38px,5vw,65px);
   line-height:1.08;
-  margin:0;
-  letter-spacing:-1.7px;
+  letter-spacing:-2px;
+  margin-bottom:20px;
 }
 
-.lead{
-  font-size:21px;
-  color:#334b61;
+.section-intro{
+  color:var(--muted);
+  font-size:19px;
+  max-width:800px;
+  margin-bottom:45px;
+}
+
+.section-dark .section-intro{
+  color:#c8dce8;
 }
 
 /* =========================
@@ -435,73 +380,109 @@ button{
 
 .about-grid{
   display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:45px;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:start;
 }
 
-.about-grid p{
-  font-size:17px;
+.about-text{
+  font-size:19px;
+  color:#51697b;
 }
 
-.quote-card{
-  background:linear-gradient(135deg,#e9f8ff,#fff);
-  border:1px solid #cdebf8;
-  border-radius:24px;
-  padding:36px;
+.about-text p{
+  margin-bottom:20px;
+}
+
+.about-highlights{
+  display:grid;
+  gap:16px;
+}
+
+.highlight{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
   box-shadow:var(--shadow);
 }
 
-.quote-mark{
-  font:70px Georgia,serif;
-  color:var(--sky);
-  line-height:.6;
-}
-
-.quote-card p{
-  font-size:24px!important;
-  line-height:1.35;
-  color:#16324c;
-}
-
-.quote-card small{
-  font-weight:800;
-  color:#597086;
+.highlight strong{
+  display:block;
+  font-size:22px;
+  color:var(--ink);
+  margin-bottom:5px;
 }
 
 /* =========================
    HR EXPERTISE
 ========================= */
 
-.cards{
+.hr-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:17px;
+  gap:18px;
 }
 
-.card{
-  padding:25px;
-  border-radius:21px;
-  background:rgba(255,255,255,.065);
-  border:1px solid rgba(155,233,255,.18);
+.hr-card{
+  background:#153f5e;
+  border:1px solid rgba(155,233,255,.20);
+  border-radius:22px;
+  padding:28px;
+  min-height:220px;
   position:relative;
   overflow:hidden;
-  transition:.2s;
+  transition:.25s ease;
 }
 
-.card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(155,233,255,.5);
+.hr-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(155,233,255,.48);
 }
 
-.card h3{
-  font-size:20px;
+.hr-number{
+  color:var(--gold2);
+  font-weight:900;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.hr-card h3{
+  font-size:23px;
   line-height:1.25;
-  margin:9px 0;
+  margin-bottom:15px;
 }
 
-.card p{
+.hr-card p{
   color:#c7dce8;
-  font-size:14px;
+  font-size:16px;
+}
+
+/* =========================
+   CAREER
+========================= */
+
+.career-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.career-card{
+  padding:30px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.career-card h3{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.career-card p{
+  color:var(--muted);
 }
 
 /* =========================
@@ -511,17 +492,1045 @@ button{
 .service-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:20px;
 }
 
 .service{
-  background:#fff;
+  background:white;
   border:1px solid var(--line);
-  border-radius:19px;
-  padding:22px;
-  box-shadow:0 10px 30px rgba(8,36,61,.06);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--shadow);
 }
 
 .service h3{
-  margin:0 0 7px;
-  font-size:
+  font-size:22px;
+  margin-bottom:9px;
+}
+
+.service p{
+  color:var(--muted);
+}
+
+/* =========================
+   AI
+========================= */
+
+.ai-box{
+  background:#153f5e;
+  border:1px solid rgba(155,233,255,.20);
+  border-radius:28px;
+  padding:45px;
+  max-width:950px;
+}
+
+.ai-box p{
+  color:#c7dce8;
+  font-size:19px;
+  margin-bottom:18px;
+}
+
+.ai-points{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:25px;
+}
+
+.ai-point{
+  padding:18px;
+  border-radius:15px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+/* =========================
+   ARTICLES
+========================= */
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.article{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.article small{
+  color:var(--gold);
+  font-weight:900;
+}
+
+.article h3{
+  font-size:23px;
+  line-height:1.3;
+  margin:12px 0;
+}
+
+.article p{
+  color:var(--muted);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  text-align:center;
+}
+
+.contact .section-intro{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+
+.social{
+  padding:14px 24px;
+  border-radius:15px;
+  border:1px solid rgba(155,233,255,.30);
+  background:rgba(255,255,255,.05);
+  color:white;
+  font-weight:800;
+  transition:.25s;
+}
+
+.social:hover{
+  background:rgba(53,191,232,.15);
+  border-color:var(--sky);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#061c30;
+  color:#9fb6c6;
+  padding:35px 0;
+  text-align:center;
+  font-size:14px;
+}
+
+footer strong{
+  color:var(--gold2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .hero{
+    padding:65px 0 70px;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .hero h1{
+    font-size:clamp(55px,15vw,90px);
+  }
+
+  .hero-photo{
+    max-width:650px;
+    margin:auto;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hr-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-grid,
+  .article-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:620px){
+
+  .header-inner{
+    min-height:72px;
+  }
+
+  .brand{
+    font-size:30px;
+  }
+
+  .menu-button,
+  .language-button{
+    min-height:45px;
+    padding:0 14px;
+  }
+
+  .menu-panel{
+    top:68px;
+    right:3%;
+    width:94vw;
+  }
+
+  .hero{
+    padding:55px 0 65px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  .hero-role{
+    font-size:21px;
+  }
+
+  .hero-message{
+    font-size:27px;
+  }
+
+  .hero-description{
+    font-size:17px;
+  }
+
+  .hero-photo img{
+    aspect-ratio:4/5;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .hr-grid,
+  .career-grid,
+  .service-grid,
+  .article-grid,
+  .ai-points{
+    grid-template-columns:1fr;
+  }
+
+  .hr-card{
+    min-height:auto;
+  }
+
+  .ai-box{
+    padding:28px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a class="brand" href="#home" aria-label="Aly Abdelaziz Home">
+      AA
+    </a>
+
+    <div class="header-actions">
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menuPanel">
+        ☰ Menu
+      </button>
+
+      <button
+        class="language-button"
+        id="languageButton"
+        type="button">
+        عربي
+      </button>
+
+    </div>
+
+  </div>
+
+  <nav class="menu-panel" id="menuPanel">
+
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#hr">HR Expertise</a>
+    <a href="#career">Career Development</a>
+    <a href="#performance">Performance Development</a>
+    <a href="#ai">AI & Future of Work</a>
+    <a href="#articles">Insights & Articles</a>
+    <a href="#contact">Contact</a>
+
+    <a href="https://wa.me/" target="_blank" rel="noopener">
+      WhatsApp
+    </a>
+
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+      Instagram
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        WELCOME TO MY WORLD
+      </div>
+
+      <h1>
+        Aly<br>
+        <span>Abdelaziz</span>
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="hero-role">
+        HR Professional • Career Development<br>
+        • Leadership • AI & Future of Work
+      </div>
+
+      <div class="hero-message">
+        Empowering People.<br>
+        Developing Performance.<br>
+        Shaping Careers. Preparing for the Future.
+      </div>
+
+      <p class="hero-description">
+        I have trained thousands in HR, leadership and communication
+        and participated in consulting, recruitment and talent
+        acquisition activities.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-primary" href="#about">
+          About Me
+        </a>
+
+        <a class="btn btn-secondary" href="#contact">
+          Let's Connect
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-photo">
+
+      <div class="hero-photo-frame">
+
+        <img
+          src="assets/profile.png"
+          alt="Aly Abdelaziz — HR Professional"
+          loading="eager">
+
+        <div class="photo-caption">
+          <strong>Aly Abdelaziz</strong>
+          HR • Career Development • AI & Future of Work
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section section-white" id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      ABOUT ME
+    </div>
+
+    <h2 class="section-title">
+      Experience, Training & Practical HR
+    </h2>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          My professional focus is at the intersection of
+          Human Resources, people development, leadership,
+          performance and career growth.
+        </p>
+
+        <p>
+          I believe effective HR is not only about policies
+          and procedures. It is about connecting people,
+          capability and business needs to create sustainable
+          organizational value.
+        </p>
+
+        <p>
+          This website brings together practical perspectives
+          on HR, careers, performance, leadership,
+          communication and the future of work.
+        </p>
+
+      </div>
+
+
+      <div class="about-highlights">
+
+        <div class="highlight">
+          <strong>People</strong>
+          Building stronger capabilities and healthier
+          professional relationships.
+        </div>
+
+        <div class="highlight">
+          <strong>Performance</strong>
+          Turning expectations, feedback and development
+          into measurable progress.
+        </div>
+
+        <div class="highlight">
+          <strong>Future</strong>
+          Preparing professionals and organizations for
+          changing work environments.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     HR EXPERTISE
+========================= -->
+
+<section class="section section-dark" id="hr">
+
+  <div class="container">
+
+    <div class="section-label">
+      HR EXPERTISE
+    </div>
+
+    <h2 class="section-title">
+      A Complete HR Journey —
+      From Strategy to People, Performance & Rewards
+    </h2>
+
+    <p class="section-intro">
+      A practical view of the major HR functions and how
+      they connect to organizational capability and business
+      performance.
+    </p>
+
+
+    <div class="hr-grid">
+
+      <article class="hr-card">
+        <div class="hr-number">01</div>
+        <h3>Strategic HR Management</h3>
+        <p>
+          Translating business direction into people strategy,
+          workforce priorities and organizational capability.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">02</div>
+        <h3>Workforce Planning</h3>
+        <p>
+          Determining the workforce numbers, skills and roles
+          an organization is likely to need.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">03</div>
+        <h3>Recruitment & Talent Acquisition</h3>
+        <p>
+          Building effective approaches to attract, assess
+          and select the right talent.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">04</div>
+        <h3>Employee Relations</h3>
+        <p>
+          Supporting productive workplace relationships,
+          communication and conflict resolution.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">05</div>
+        <h3>Compensation & Benefits</h3>
+        <p>
+          Designing logical reward structures that support
+          fairness, performance and attraction.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">06</div>
+        <h3>HR Policies & Compliance</h3>
+        <p>
+          Creating practical HR frameworks aligned with
+          organizational requirements and applicable law.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">07</div>
+        <h3>Training & Development</h3>
+        <p>
+          Identifying learning needs and building development
+          interventions that improve capability.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">08</div>
+        <h3>Performance Management</h3>
+        <p>
+          Creating clear expectations, feedback, measurement
+          and development conversations.
+        </p>
+      </article>
+
+      <article class="hr-card">
+        <div class="hr-number">09</div>
+        <h3>Compensation & Rewards</h3>
+        <p>
+          Connecting reward structures with internal
+          consistency, performance and attraction.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CAREER
+========================= -->
+
+<section class="section section-light" id="career">
+
+  <div class="container">
+
+    <div class="section-label">
+      CAREER DEVELOPMENT
+    </div>
+
+    <h2 class="section-title">
+      Build a Career With Direction
+    </h2>
+
+    <p class="section-intro">
+      Career development is more than finding another job.
+      It is about understanding your strengths, building
+      relevant capabilities and making intentional career
+      decisions.
+    </p>
+
+
+    <div class="career-grid">
+
+      <article class="career-card">
+        <h3>Career Assessment</h3>
+        <p>
+          Understanding interests, strengths, personality
+          and professional direction.
+        </p>
+      </article>
+
+      <article class="career-card">
+        <h3>Career Shift</h3>
+        <p>
+          Planning a practical transition into a new
+          professional field or HR career.
+        </p>
+      </article>
+
+      <article class="career-card">
+        <h3>Personal Branding</h3>
+        <p>
+          Communicating professional value clearly across
+          CVs, LinkedIn and professional networks.
+        </p>
+      </article>
+
+      <article class="career-card">
+        <h3>Career Growth</h3>
+        <p>
+          Building skills, visibility and experiences that
+          support long-term professional growth.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PERFORMANCE
+========================= -->
+
+<section class="section section-white" id="performance">
+
+  <div class="container">
+
+    <div class="section-label">
+      PERFORMANCE DEVELOPMENT
+    </div>
+
+    <h2 class="section-title">
+      Strengthen Performance
+    </h2>
+
+    <p class="section-intro">
+      Supporting capabilities within the broader HR and
+      performance journey.
+    </p>
+
+
+    <div class="service-grid">
+
+      <article class="service">
+        <h3>Personality Analysis</h3>
+        <p>
+          A practical lens for self-awareness and collaboration.
+        </p>
+      </article>
+
+      <article class="service">
+        <h3>Communication Skills</h3>
+        <p>
+          Practical communication for leaders, teams and
+          career growth.
+        </p>
+      </article>
+
+      <article class="service">
+        <h3>Influencing Others</h3>
+        <p>
+          Ethical and effective influence in decisions and
+          professional relationships.
+        </p>
+      </article>
+
+      <article class="service">
+        <h3>Leadership</h3>
+        <p>
+          Developing leadership behaviors that improve people,
+          decisions and results.
+        </p>
+      </article>
+
+      <article class="service">
+        <h3>Conflict Resolution</h3>
+        <p>
+          Practical approaches to managing disagreements and
+          maintaining productive relationships.
+        </p>
+      </article>
+
+      <article class="service">
+        <h3>Life & Career Coaching</h3>
+        <p>
+          Individual-focused support for goals, decisions
+          and professional development.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     AI
+========================= -->
+
+<section class="section section-dark" id="ai">
+
+  <div class="container">
+
+    <div class="section-label">
+      AI & FUTURE OF WORK
+    </div>
+
+    <h2 class="section-title">
+      Human Capability in an AI-Driven World
+    </h2>
+
+    <p class="section-intro">
+      Exploring technology while keeping human judgment,
+      ethics and capability at the center.
+    </p>
+
+
+    <div class="ai-box">
+
+      <p>
+        Artificial intelligence is changing how organizations
+        recruit, develop people, analyze information and
+        design work.
+      </p>
+
+      <p>
+        The future belongs not simply to people who use AI,
+        but to professionals who can combine technology
+        with judgment, communication, creativity and
+        human understanding.
+      </p>
+
+
+      <div class="ai-points">
+
+        <div class="ai-point">
+          AI in HR
+        </div>
+
+        <div class="ai-point">
+          Future of Work
+        </div>
+
+        <div class="ai-point">
+          Human + AI Collaboration
+        </div>
+
+        <div class="ai-point">
+          Digital Skills
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ARTICLES
+========================= -->
+
+<section class="section section-light" id="articles">
+
+  <div class="container">
+
+    <div class="section-label">
+      INSIGHTS & ARTICLES
+    </div>
+
+    <h2 class="section-title">
+      Practical Ideas for Modern Professionals
+    </h2>
+
+    <p class="section-intro">
+      Articles and practical insights covering HR,
+      careers, leadership, performance, AI and the future
+      of work.
+    </p>
+
+
+    <div class="article-grid">
+
+      <article class="article">
+
+        <small>HR</small>
+
+        <h3>
+          The Modern Role of Human Resources
+        </h3>
+
+        <p>
+          How HR can move beyond administration and become
+          a strategic contributor to business performance.
+        </p>
+
+      </article>
+
+
+      <article class="article">
+
+        <small>CAREER</small>
+
+        <h3>
+          How to Make a Career Shift into HR
+        </h3>
+
+        <p>
+          A practical starting point for professionals
+          considering a transition into Human Resources.
+        </p>
+
+      </article>
+
+
+      <article class="article">
+
+        <small>AI</small>
+
+        <h3>
+          AI & the Future of Work
+        </h3>
+
+        <p>
+          Understanding how artificial intelligence is
+          changing skills, jobs and organizational capability.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section section-dark contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      LET'S CONNECT
+    </div>
+
+    <h2 class="section-title">
+      Let's Build Better Careers & Organizations
+    </h2>
+
+    <p class="section-intro">
+      Follow the journey, explore the insights and connect
+      through the professional channels below.
+    </p>
+
+
+    <div class="socials">
+
+      <a
+        class="social"
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener">
+        WhatsApp
+      </a>
+
+      <a
+        class="social"
+        href="https://www.linkedin.com/"
+        target="_blank"
+        rel="noopener">
+        LinkedIn
+      </a>
+
+      <a
+        class="social"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener">
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container">
+
+    <strong>Aly Abdelaziz</strong>
+
+    <br>
+
+    HR • Career Development • Leadership • AI & Future of Work
+
+    <br><br>
+
+    © <span id="year"></span> Aly Abdelaziz. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MENU
+========================= */
+
+const menuButton = document.getElementById("menuButton");
+const menuPanel = document.getElementById("menuPanel");
+
+menuButton.addEventListener("click", function(){
+
+  const isOpen = menuPanel.classList.toggle("open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+});
+
+
+/* Close menu after clicking a link */
+
+document.querySelectorAll("#menuPanel a").forEach(function(link){
+
+  link.addEventListener("click", function(){
+
+    menuPanel.classList.remove("open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  });
+
+});
+
+
+/* Close menu when clicking outside */
+
+document.addEventListener("click", function(event){
+
+  if(
+    !menuPanel.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ){
+
+    menuPanel.classList.remove("open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+document.getElementById("languageButton")
+.addEventListener("click", function(){
+
+  /*
+   * Arabic page can be connected here later.
+   * Keeping the button functional without
+   * breaking the current English page.
+   */
+
+  window.location.href = "index-ar.html";
+
+});
+
+
+/* =========================
+   YEAR
+========================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
