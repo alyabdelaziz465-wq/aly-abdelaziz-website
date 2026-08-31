@@ -1,90 +1,12 @@
-(() => {
-  "use strict";
-
-  const langToggle = document.getElementById("langToggle");
-  const giscusHost = document.getElementById("giscus");
-  const year = document.getElementById("year");
-  const menu = document.querySelector(".menu-dropdown");
-
-  let lang = localStorage.getItem("alyLang") || "en";
-
-  function applyLanguage() {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.body.dir = lang === "ar" ? "rtl" : "ltr";
-
-    document.querySelectorAll("[data-en][data-ar]").forEach((el) => {
-      const value = lang === "ar" ? el.dataset.ar : el.dataset.en;
-      if (value !== undefined) el.textContent = value;
-    });
-
-    langToggle.textContent = lang === "ar" ? "English" : "عربي";
-    langToggle.setAttribute(
-      "aria-label",
-      lang === "ar" ? "Switch to English" : "التبديل إلى العربية"
-    );
-
-    document.title = lang === "ar"
-      ? "علي عبدالعزيز | الموارد البشرية • التطوير المهني • القيادة • الذكاء الاصطناعي"
-      : "Aly Abdelaziz | HR • Career Development • Leadership • AI";
-
-    localStorage.setItem("alyLang", lang);
-    loadGiscus();
-  }
-
-  function loadGiscus() {
-    if (!giscusHost) return;
-
-    giscusHost.innerHTML = "";
-
-    const g = document.createElement("script");
-    g.src = "https://giscus.app/client.js";
-    g.setAttribute("data-repo", "alyabdelaziz465-wq/aly-abdelaziz-website");
-    g.setAttribute("data-repo-id", "R_kgDOUJFy5Q");
-    g.setAttribute("data-category", "General");
-    g.setAttribute("data-category-id", "DIC_kwDOUJFy5c4DEjXN");
-    g.setAttribute("data-mapping", "pathname");
-    g.setAttribute("data-strict", "0");
-    g.setAttribute("data-reactions-enabled", "1");
-    g.setAttribute("data-emit-metadata", "0");
-    g.setAttribute("data-input-position", "bottom");
-    g.setAttribute("data-theme", "preferred_color_scheme");
-    g.setAttribute("data-lang", lang === "ar" ? "ar" : "en");
-    g.setAttribute("crossorigin", "anonymous");
-    g.async = true;
-
-    giscusHost.appendChild(g);
-  }
-
-  async function sharePage(title) {
-    const url = window.location.href;
-    const text = `${title} — Aly Abdelaziz`;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({ title, text, url });
-      } catch (_) {}
-      return;
-    }
-
-    const msg = encodeURIComponent(`${text} ${url}`);
-    window.open(`https://wa.me/?text=${msg}`, "_blank", "noopener,noreferrer");
-  }
-
-  window.sharePage = sharePage;
-
-  langToggle.addEventListener("click", () => {
-    lang = lang === "en" ? "ar" : "en";
-    applyLanguage();
-  });
-
-  document.querySelectorAll(".menu-panel a[href^='#']").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (menu) menu.removeAttribute("open");
-    });
-  });
-
-  if (year) year.textContent = new Date().getFullYear();
-
-  applyLanguage();
-})();
+const $=id=>document.getElementById(id);const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+function menu(){const m=$('mobileNav');m.classList.toggle('open')}
+function show(id,title,text,score){const e=$(id);e.innerHTML=`<strong>${title}</strong><div>${text}</div>${score!==undefined?`<div class="meter"><i style="width:${score}%"></i></div><small>${score}%</small>`:''}`;e.classList.add('show')}
+function n(id){return Number($(id).value)||0}
+function caseDiag(){let vals=['d1','d2','d3','d4','d5'].map(n);let s=Math.round(vals.reduce((a,b)=>a+b,0)/25*100);let msg=s<50?T('Low diagnostic readiness: clarify the problem, expectations and evidence before selecting an intervention.','جاهزية التشخيص منخفضة: وضّح المشكلة والتوقعات والأدلة قبل اختيار التدخل.'):s<75?T('Moderate readiness: map the process and test the most likely cause with evidence.','جاهزية متوسطة: ارسم مسار العمل واختبر السبب الأكثر احتمالًا بالأدلة.'):T('Strong signal: define a targeted intervention, owner, KPI and review date.','الإشارة قوية: حدّد تدخلًا مستهدفًا ومسؤولًا ومؤشر أداء وموعدًا للمراجعة.');show('r1',T('HR case diagnosis','تشخيص حالة HR'),msg,s)}
+function skillGap(){let c=clamp(n('sc'),1,5),t=clamp(n('st'),1,5),g=Math.max(0,t-c),score=Math.round((4-g)/4*100);show('r2',T('Capability gap','فجوة القدرات'),g?T(`Gap = ${g}/4. Build a plan combining learning, practice, evidence and review.`,`الفجوة = ${g}/4. ابنِ خطة تجمع بين التعلم والممارسة والدليل والمراجعة.`):T('No gap at the selected target. Focus on application and evidence.','لا توجد فجوة عند المستوى المستهدف. ركّز على التطبيق وبناء الأدلة.'),score)}
+function turnover(){let emp=n('tn'),rate=n('tr')/100,cost=n('tc'),exits=Math.round(emp*rate),total=exits*cost;show('r3',T('Estimated turnover exposure','التكلفة التقديرية للدوران'),T(`Estimated exits: ${exits}. Estimated replacement cost: ${total.toLocaleString()}. Use this to prioritize retention analysis by role, manager, tenure and exit reason.`,`حالات الخروج المقدرة: ${exits}. تكلفة الاستبدال المقدرة: ${total.toLocaleString()}. استخدم النتيجة لتحديد أولويات تحليل الاستبقاء حسب الوظيفة والمدير ومدة الخدمة وسبب الخروج.`))}
+function funnel(){let a=n('fa'),s=n('fs'),i=n('fi'),o=n('fo'),h=n('fh'),rates=[s/a,i/s,o/i,h/o].map(x=>isFinite(x)?x:0),idx=rates.indexOf(Math.min(...rates)),names=[T('Application → Screening','التقديم ← الفرز'),T('Screening → Interview','الفرز ← المقابلة'),T('Interview → Offer','المقابلة ← العرض'),T('Offer → Hire','العرض ← التعيين')];show('r4',T('Recruitment bottleneck','اختناق مسار التوظيف'),`${names[idx]} — ${T('conversion','معدل التحويل')}: ${Math.round(rates[idx]*100)}%. ${T('Investigate this stage before increasing overall applicant volume.','افحص هذه المرحلة قبل زيادة حجم المتقدمين ككل.')}`)}
+function performance(){let vals=['pe','pc','pp','pm'].map(n),i=vals.indexOf(Math.min(...vals)),names=[T('expectations','التوقعات'),T('capability','القدرة'),T('process','العملية'),T('management','الإدارة')];show('r5',T('Performance root cause','السبب الجذري لفجوة الأداء'),`${T('Lowest dimension','أضعف بُعد')}: ${names[i]}. ${T('Start here and test the hypothesis with evidence before judging the employee.','ابدأ بهذا البُعد واختبر الفرضية بالأدلة قبل الحكم على الموظف.')}`)}
+function aiReady(){let v=n('av'),f=n('af'),d=n('ad'),h=n('ah'),r=n('ar');let score=clamp(Math.round((v*2+f+d+h-r*2)/7*20),0,100);let msg=score>=70?T('Good candidate for a controlled pilot with clear KPI, governance and human oversight.','مرشح جيد لتجربة مضبوطة مع مؤشر أداء واضح وحوكمة وإشراف بشري.'):score>=45?T('Potential value exists. Improve data readiness or reduce risk before scaling.','توجد قيمة محتملة. حسّن جاهزية البيانات أو خفّض المخاطر قبل التوسع.'):T('Do not automate yet. Redesign the workflow and strengthen data, controls and accountability first.','لا تبدأ الأتمتة الآن. أعد تصميم سير العمل وعزّز البيانات والضوابط والمسؤولية أولًا.');show('r6',T('AI use-case readiness','جاهزية حالة استخدام الذكاء الاصطناعي'),msg,score)}
+function T(en,ar){return document.documentElement.lang==='ar'?ar:en}
+document.addEventListener('DOMContentLoaded',()=>{$('year').textContent=new Date().getFullYear()})
