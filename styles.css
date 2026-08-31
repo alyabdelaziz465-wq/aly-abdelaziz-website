@@ -174,3 +174,7 @@ header.nav nav.links {
         margin-left: auto;
     }
 }
+/* Mobile: hide the old horizontal navigation */
+.nav .links {
+    display: none !important;
+}
