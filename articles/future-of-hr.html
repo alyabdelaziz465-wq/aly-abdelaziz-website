@@ -24,7 +24,33 @@ h2{font-size:32px;line-height:1.2;color:var(--navy);margin:50px 0 18px;border-ri
 .author{margin-top:45px;padding-top:25px;border-top:1px solid var(--line);font-weight:700}.back{display:inline-block;margin-top:22px;background:var(--navy);color:#fff;padding:11px 18px;border-radius:12px;font-weight:800}
 footer{background:#06172b;color:#b8cfdf;text-align:center;padding:28px}
 @media(max-width:800px){.navlinks{display:none}.grid{grid-template-columns:1fr}.article{border-radius:18px;padding:30px 20px}.hero{padding-top:60px}.container{margin-top:-25px}}
-.brand{display:inline-flex;align-items:center;gap:10px;min-width:0}.brand-logo{width:44px;height:39px;flex:0 0 44px}.brand-copy{display:flex;flex-direction:column;line-height:1.05}.brand-copy b{font-size:20px}.brand-copy small{font-size:10px;color:#c8d9e7;margin-top:4px}.article-hero-visual{width:min(1050px,calc(100% - 40px));margin:0 auto 28px;border-radius:26px;overflow:hidden;background:#08243d;box-shadow:var(--shadow)}.article-hero-visual img{width:100%;display:block;aspect-ratio:16/7;object-fit:cover}html,body{width:100%;max-width:100%;overflow-x:clip}@media(max-width:800px){.nav{padding:10px 12px;gap:8px}.navlinks{display:none}.brand-copy b{font-size:17px}.brand-copy small{font-size:8.5px}.brand-logo{width:38px;height:34px}.article-hero-visual{width:calc(100% - 28px);margin-bottom:18px;border-radius:18px}.article-hero-visual img{aspect-ratio:16/9}.hero{padding:55px 14px 65px}.hero h1{font-size:clamp(34px,9vw,48px);overflow-wrap:anywhere}.container{width:calc(100% - 28px);padding:0 14px}.article{padding:24px 18px}.grid{grid-template-columns:1fr!important}.en{padding:20px}.nav .lang{font-size:13px;padding:7px 10px}}</style>
+.brand{display:inline-flex;align-items:center;gap:10px;min-width:0}.brand-logo{width:44px;height:39px;flex:0 0 44px}.brand-copy{display:flex;flex-direction:column;line-height:1.05}.brand-copy b{font-size:20px}.brand-copy small{font-size:10px;color:#c8d9e7;margin-top:4px}.article-hero-visual{width:min(1050px,calc(100% - 40px));margin:0 auto 28px;border-radius:26px;overflow:hidden;background:#08243d;box-shadow:var(--shadow)}.article-hero-visual img{width:100%;display:block;aspect-ratio:16/7;object-fit:cover}html,body{width:100%;max-width:100%;overflow-x:clip}@media(max-width:800px){.nav{padding:10px 12px;gap:8px}.navlinks{display:none}.brand-copy b{font-size:17px}.brand-copy small{font-size:8.5px}.brand-logo{width:38px;height:34px}.article-hero-visual{width:calc(100% - 28px);margin-bottom:18px;border-radius:18px}.article-hero-visual img{aspect-ratio:16/9}.hero{padding:55px 14px 65px}.hero h1{font-size:clamp(34px,9vw,48px);overflow-wrap:anywhere}.container{width:calc(100% - 28px);padding:0 14px}.article{padding:24px 18px}.grid{grid-template-columns:1fr!important}.en{padding:20px}.nav .lang{font-size:13px;padding:7px 10px}}
+/* V23 — تنسيق تحريري رسمي موحد للنصوص */
+:where(p,.intro,.desc,.lead,.card p,.tool p,.contact span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: right;
+  overflow-wrap: break-word;
+}
+:where(.hero h1,.hero h2,.title,.section-title,.eyebrow,.label,h3,h4){
+  text-align: right;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width:850px){
+  :where(p,.intro,.desc,.lead,.card p,.tool p,.contact span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+    text-align-last: right;
+    line-height: 1.9;
+  }
+}
+</style>
 </head>
 <body>
 <header class="nav">
