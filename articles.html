@@ -3,13 +3,13 @@
 
 /* Formal editorial typography: aligned text blocks */
 main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-  text-align: start;
-  text-justify: none;
+  text-align: justify;
+  text-justify: inter-word;
   text-wrap: pretty;
 }
 html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
-  text-align: start;
-  text-justify: none;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .hero .lead {
   text-align: left;
@@ -20,10 +20,37 @@ html[dir="rtl"] .hero .lead {
 }
 @media(max-width:620px){
   main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-    text-align: start;
-    text-justify: none;
+    text-align: justify;
+    text-justify: inter-word;
   }
   .hero .lead { text-align:center; }
   html[dir="rtl"] .hero .lead { text-align:center; }
+}
+
+/* V23 — formal editorial text rhythm */
+:where(p,.intro,.desc,.lead,.card p,.tool p,.contact-card span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+:where(.hero h1,.hero h2,.title,.section-title,.eyebrow,.label,h3,h4){
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width:850px){
+  :where(p,.intro,.desc,.lead,.card p,.tool p,.contact-card span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+    text-align-last: left;
+    line-height: 1.82;
+  }
 }
 </style></head><body><header class="nav"><div class="navin"><a class="brand" href="index.html"><svg viewBox="0 0 64 56" aria-hidden="true"><path fill="#d8aa45" d="M3 52 27 3h13L15 52H3Z"/><path fill="#fff" d="M27 3h13l21 49H48L35 20 27 3Z"/><path fill="#d8aa45" d="m27 32 8-15 9 18H31l-4-3Z"/></svg><span>Aly Abdelaziz<small>HR • Development • Future of Work</small></span></a><div class="actions"><a class="pill" href="index.html">Home</a><a class="pill" href="articles-ar.html">العربية</a></div></div></header><main><section class="hero"><div class="wrap"><h1>Article Library & Insights</h1><p>Deep articles that connect HR, career development, performance, AI and future-of-work knowledge to practical execution.</p><div class="tools"><input id="q" type="search" placeholder="Search articles..." aria-label="Search articles..."><select id="cat"><option value="">All topics</option><option>HR Problem Diagnosis</option><option>Evidence-Based Recruitment</option><option>Performance Management</option><option>Career Shift into HR</option><option>AI Across the Employee Lifecycle</option><option>Skills-Based HR</option></select></div><div class="count" id="count">6 articles</div></div></section><section class="wrap"><div class="grid" id="grid"><article class="card" data-search="hr problem diagnosis why hr problems are often diagnosed wrong — and how to find the root cause before you waste time and budget a practical framework for turning an hr complaint into a testable hypothesis, a root-cause diagnosis, and a measurable intervention."><div class="media"><img src="assets/article-01.svg" alt="HR Problem Diagnosis" loading="lazy"><span>01</span></div><div class="body"><b class="tag">HR Problem Diagnosis</b><h2>Why HR Problems Are Often Diagnosed Wrong — and How to Find the Root Cause Before You Waste Time and Budget</h2><p>A practical framework for turning an HR complaint into a testable hypothesis, a root-cause diagnosis, and a measurable intervention.</p><div class="meta"><span>Long-form article</span><a href="articles/diagnosis-en.html">Read article →</a></div></div></article><article class="card" data-search="evidence-based recruitment from cv screening to evidence-based hiring: how to build a better selection system from job analysis to structured interviews, work samples, fair scoring and quality-of-hire measurement."><div class="media"><img src="assets/article-02.svg" alt="Evidence-Based Recruitment" loading="lazy"><span>02</span></div><div class="body"><b class="tag">Evidence-Based Recruitment</b><h2>From CV Screening to Evidence-Based Hiring: How to Build a Better Selection System</h2><p>From job analysis to structured interviews, work samples, fair scoring and quality-of-hire measurement.</p><div class="meta"><span>Long-form article</span><a href="articles/recruitment-en.html">Read article →</a></div></div></article><article class="card" data-search="performance management when performance drops: find the real cause before you intervene a diagnostic framework to distinguish skill, motivation, expectations, system, workload and management causes."><div class="media"><img src="assets/article-03.svg" alt="Performance Management" loading="lazy"><span>03</span></div><div class="body"><b class="tag">Performance Management</b><h2>When Performance Drops: Find the Real Cause Before You Intervene</h2><p>A diagnostic framework to distinguish skill, motivation, expectations, system, workload and management causes.</p><div class="meta"><span>Long-form article</span><a href="articles/performance-en.html">Read article →</a></div></div></article><article class="card" data-search="career shift into hr how to transition into hr without starting from zero a practical roadmap for translating previous experience into credible hr capability and evidence."><div class="media"><img src="assets/article-04.svg" alt="Career Shift into HR" loading="lazy"><span>04</span></div><div class="body"><b class="tag">Career Shift into HR</b><h2>How to Transition into HR Without Starting from Zero</h2><p>A practical roadmap for translating previous experience into credible HR capability and evidence.</p><div class="meta"><span>Long-form article</span><a href="articles/career-shift-en.html">Read article →</a></div></div></article><article class="card" data-search="ai across the employee lifecycle ai across the employee lifecycle: where it adds value and where humans must stay in control a practical map for ai in workforce planning, attraction, hiring, onboarding, learning, performance and retention—with governance."><div class="media"><img src="assets/article-05.svg" alt="AI Across the Employee Lifecycle" loading="lazy"><span>05</span></div><div class="body"><b class="tag">AI Across the Employee Lifecycle</b><h2>AI Across the Employee Lifecycle: Where It Adds Value and Where Humans Must Stay in Control</h2><p>A practical map for AI in workforce planning, attraction, hiring, onboarding, learning, performance and retention—with governance.</p><div class="meta"><span>Long-form article</span><a href="articles/ai-employee-lifecycle-en.html">Read article →</a></div></div></article><article class="card" data-search="skills-based hr from jobs to skills: how hr can prepare for a more flexible workforce how to move from static job descriptions to a dynamic system of skills, learning, internal mobility and workforce planning."><div class="media"><img src="assets/article-06.svg" alt="Skills-Based HR" loading="lazy"><span>06</span></div><div class="body"><b class="tag">Skills-Based HR</b><h2>From Jobs to Skills: How HR Can Prepare for a More Flexible Workforce</h2><p>How to move from static job descriptions to a dynamic system of skills, learning, internal mobility and workforce planning.</p><div class="meta"><span>Long-form article</span><a href="articles/skills-based-hr-en.html">Read article →</a></div></div></article></div></section></main><footer>© Aly Abdelaziz — HR • Career Development • AI • Future of Work</footer><script>const q=document.getElementById('q'),cat=document.getElementById('cat'),cards=[...document.querySelectorAll('.card')],count=document.getElementById('count');function filter(){const s=q.value.trim().toLowerCase(),c=cat.value.toLowerCase();let n=0;cards.forEach(x=>{const ok=(!s||x.dataset.search.includes(s))&&(!c||x.querySelector('.tag').textContent.toLowerCase()===c);x.style.display=ok?'flex':'none';if(ok)n++});count.textContent=n+' articles'}q.addEventListener('input',filter);cat.addEventListener('change',filter);</script></body></html>

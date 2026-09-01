@@ -34,37 +34,57 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
   .article-grid,.articles{grid-template-columns:1fr!important}
 }
 
-/* Clean professional paragraph typography — no forced justification */
+/* Formal editorial typography: aligned text blocks */
 main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-  text-align: start;
-  text-justify: none;
+  text-align: justify;
+  text-justify: inter-word;
   text-wrap: pretty;
-  word-spacing: normal;
-  letter-spacing: normal;
 }
 html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
-  text-align: right;
-  direction: rtl;
+  text-align: justify;
+  text-justify: inter-word;
 }
-.hero .lead { text-align: left; text-wrap: balance; }
-html[dir="rtl"] .hero .lead { text-align: right; direction: rtl; }
+.hero .lead {
+  text-align: left;
+  text-wrap: balance;
+}
+html[dir="rtl"] .hero .lead {
+  text-align: right;
+}
 @media(max-width:620px){
   main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-    text-align: start;
-    text-justify: none;
-    word-spacing: normal;
+    text-align: justify;
+    text-justify: inter-word;
   }
-  html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span { text-align: right; }
-  .hero .lead { text-align: left; }
-  html[dir="rtl"] .hero .lead { text-align: right; }
+  .hero .lead { text-align:center; }
+  html[dir="rtl"] .hero .lead { text-align:center; }
 }
 
-/* Mobile editorial rhythm */
-@media(max-width:620px){
-  .hero-copy{min-width:0;max-width:100%;}
-  .hero-description,.desc{max-width:680px;margin-left:auto;margin-right:auto;}
-  .hero h1{margin-top:0;}
-  .hero .role,.hero h2{max-width:680px;}
+/* V23 — formal editorial text rhythm */
+:where(p,.intro,.desc,.lead,.card p,.tool p,.contact-card span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+:where(.hero h1,.hero h2,.title,.section-title,.eyebrow,.label,h3,h4){
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width:850px){
+  :where(p,.intro,.desc,.lead,.card p,.tool p,.contact-card span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+    text-align-last: left;
+    line-height: 1.82;
+  }
 }
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="#home" aria-label="Aly Abdelaziz home"><svg class="brand-logo" viewBox="0 0 64 56" aria-hidden="true" focusable="false"><path fill="#d8aa45" d="M3 52 27 3l13 0-25 49H3Z"/><path fill="#fff" d="M27 3h13l21 49H48L35 20 27 3Z"/><path fill="#d8aa45" d="m27 32 8-15 9 18H31l-4-3Z"/></svg><span class="brand-copy"><b>Aly Abdelaziz</b><small>HR • Development • Future of Work</small></span></a><div class="header-actions"><button class="menu-button" id="menuBtn" type="button" aria-expanded="false">☰ Menu</button><a class="language-button" href="index-ar.html">عربي</a></div></div><nav class="menu-panel" id="menu"><a href="#home">Home</a><a href="#hr">HR Intelligence</a><a href="#ai">AI across HR</a><a href="#career">Career Intelligence</a><a href="#tools">HR & AI Tools</a><a href="#analytics">People Analytics</a><a href="#future">Future of Work</a><a href="articles.html">Articles</a><a href="#contact">Contact</a><div class="menu-divider"></div><a href="https://wa.me/201110905272" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.linkedin.com/in/aly-abdelaziz-b17195296/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/aly.abdelaziz_hr.consaltant/" target="_blank" rel="noopener">Instagram</a></nav></header><main id="main">
 <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow">HR • CAREER • PERFORMANCE • AI</div><h1>Aly<br><span>Abdelaziz</span></h1><div class="line"></div><div class="role">HR Professional • Career Development • Leadership • AI & Future of Work</div><div class="hero-lead">HR intelligence for people, performance and careers.</div><p class="hero-description">Connecting practical HR methods with people analytics, responsible AI, career development and the future of work — with an emphasis on execution, problem solving and measurable outcomes.</p><div class="buttons"><a class="btn btn-primary" href="#about">About Me</a><a class="btn btn-secondary" href="#tools">Explore Tools</a></div></div><div class="hero-photo"><div class="hero-photo-frame"><img src="./assets/profile.png" width="1402" height="1122" alt="Aly Abdelaziz — HR Professional" loading="eager" fetchpriority="high"><div class="caption"><strong>Aly Abdelaziz</strong>HR • Career Development • AI & Future of Work</div></div></div></div></section>
