@@ -3,13 +3,13 @@
 
 /* Formal editorial typography: aligned text blocks */
 main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: start;
+  text-justify: none;
   text-wrap: pretty;
 }
 html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: start;
+  text-justify: none;
 }
 .hero .lead {
   text-align: left;
@@ -20,8 +20,8 @@ html[dir="rtl"] .hero .lead {
 }
 @media(max-width:620px){
   main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: start;
+    text-justify: none;
   }
   .hero .lead { text-align:center; }
   html[dir="rtl"] .hero .lead { text-align:center; }

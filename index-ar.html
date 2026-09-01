@@ -52,30 +52,37 @@ html[dir="rtl"] .article-body h3,html[dir="rtl"] .card h3,html[dir="rtl"] .tool 
  html[dir="rtl"] .brand-copy b{font-size:17px}
 }
 
-/* Formal editorial typography: aligned text blocks */
+/* Clean professional paragraph typography — no forced justification */
 main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: start;
+  text-justify: none;
   text-wrap: pretty;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
-  text-align: justify;
-  text-justify: inter-word;
-}
-.hero .lead {
-  text-align: left;
-  text-wrap: balance;
-}
-html[dir="rtl"] .hero .lead {
   text-align: right;
+  direction: rtl;
 }
+.hero .lead { text-align: left; text-wrap: balance; }
+html[dir="rtl"] .hero .lead { text-align: right; direction: rtl; }
 @media(max-width:620px){
   main p, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: start;
+    text-justify: none;
+    word-spacing: normal;
   }
-  .hero .lead { text-align:center; }
-  html[dir="rtl"] .hero .lead { text-align:center; }
+  html[dir="rtl"] main p, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span { text-align: right; }
+  .hero .lead { text-align: left; }
+  html[dir="rtl"] .hero .lead { text-align: right; }
+}
+
+/* Mobile editorial rhythm */
+@media(max-width:620px){
+  .hero-copy{min-width:0;max-width:100%;}
+  .hero-description,.desc{max-width:680px;margin-left:auto;margin-right:auto;}
+  .hero h1{margin-top:0;}
+  .hero .role,.hero h2{max-width:680px;}
 }
 </style></head><body><header class="nav"><div class="wrap navin"><a class="brand" href="#home" aria-label="Aly Abdelaziz home"><svg class="brand-logo" viewBox="0 0 64 56" aria-hidden="true" focusable="false"><path fill="#d8aa45" d="M3 52 27 3l13 0-25 49H3Z"/><path fill="#fff" d="M27 3h13l21 49H48L35 20 27 3Z"/><path fill="#d8aa45" d="m27 32 8-15 9 18H31l-4-3Z"/></svg><span class="brand-copy"><b>Aly Abdelaziz</b><small>HR • التطوير • Future of Work</small></span></a><button id="mb">☰ القائمة</button><a class="lang" href="index.html">English</a></div><nav class="menu" id="menu"><a href="#home">الرئيسية</a><a href="#about">من أنا</a><a href="#hr">ذكاء الموارد البشرية</a><a href="#ai">الذكاء الاصطناعي عبر HR</a><a href="#career">التطوير المهني</a><a href="#tools">أدوات HR وAI</a><a href="#analytics">تحليلات الأفراد</a><a href="#future">مستقبل العمل</a><a href="articles-ar.html">المقالات</a><a href="#contact">تواصل</a></nav></header>
 <main><section class="hero" id="home"><div class="wrap hero-grid"><div><div class="eyebrow">الموارد البشرية • التطوير المهني • الأداء • الذكاء الاصطناعي</div><h1>علي<br><span>عبد العزيز</span></h1><div class="line"></div><h2>متخصص موارد بشرية • التطوير المهني • القيادة • الذكاء الاصطناعي ومستقبل العمل</h2><div class="lead">ذكاء الموارد البشرية للإنسان والأداء والمسار المهني.</div><p class="desc">أربط أساليب الموارد البشرية العملية بتحليلات الأفراد والتطوير المهني والذكاء الاصطناعي المسؤول، لتحويل المعرفة إلى قرارات أفضل، وإجراءات عملية، ونتائج قابلة للقياس.</p><div class="buttons"><a class="btn primary" href="#about">من أنا</a><a class="btn secondary" href="#tools">استكشف الأدوات</a></div></div><div class="photo"><img src="assets/profile.png" alt="Aly Abdelaziz"><div class="caption"><strong>علي عبد العزيز</strong>الموارد البشرية • التطوير المهني • الذكاء الاصطناعي • مستقبل العمل</div></div></div></section>
