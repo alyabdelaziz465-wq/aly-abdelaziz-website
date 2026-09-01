@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>كيف تقوم بعمل تحول مهني إلى الموارد البشرية دون أن تبدأ من الصفر؟ | Aly Abdelaziz</title><meta content="خارطة عملية لتحويل خبرتك السابقة إلى قيمة قابلة للإثبات في وظائف الموارد البشرية." name="description"/><meta content="#08243d" name="theme-color"/><style>
 :root{--navy:#071f34;--navy2:#0d3858;--gold:#d8aa45;--gold2:#ffe08a;--paper:#f4f9fb;--ink:#10283d;--muted:#607587;--line:#dbe7ed;--cyan:#35bfe8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.95 Arial,Helvetica,sans-serif;overflow-x:clip}a{color:inherit;text-decoration:none}.nav{position:sticky;top:0;z-index:20;background:rgba(7,31,52,.97);color:#fff;border-bottom:1px solid #ffffff18;backdrop-filter:blur(12px)}.navin{width:min(1120px,92%);margin:auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;color:var(--gold2);font-weight:900}.logo{width:42px;height:38px;flex:none}.brand small{display:block;color:#d7e8f1;font-size:11px;font-weight:700;letter-spacing:.3px}.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border:1px solid #9be9ff44;border-radius:12px;background:#0d3858;color:#fff;font-weight:800;font-size:14px}.wrap{width:min(920px,92%);margin:auto}.hero{padding:72px 0 38px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}.tag{display:inline-block;color:var(--gold2);font-weight:900;font-size:13px;letter-spacing:.6px;text-transform:uppercase}h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,68px);line-height:1.12;letter-spacing:-1.2px;margin:14px 0 18px}.lead{font-size:20px;line-height:1.8;color:#e7f4f8;max-width:800px}.meta{margin-top:18px;color:#b8d1dc;font-size:14px}.heroimg{width:100%;max-height:360px;object-fit:cover;border-radius:22px;margin-top:32px;background:#fff;border:1px solid #ffffff22;box-shadow:0 18px 50px #0003}.content{padding:42px 0 80px}.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin-bottom:34px;box-shadow:0 8px 28px #0b2b3d0a}.toc h3{margin:0 0 10px;font-size:18px}.toc ol{margin:0;padding-inline-start:22px;columns:2;column-gap:38px}.toc li{margin:5px 0;break-inside:avoid;color:var(--muted)}.toc a{color:var(--navy);font-weight:700}section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 30px;margin:18px 0;box-shadow:0 7px 24px #0b2b3d09}h2{font-size:28px;line-height:1.35;color:var(--navy);margin:0 0 12px}p{margin:0;color:#243f51}.cta{margin-top:34px;padding:24px;border-radius:18px;background:#08243d;color:#fff}.cta strong{color:var(--gold2)}footer{padding:28px 0;background:#06192a;color:#c9dce5;text-align:center;font-size:13px}@media(max-width:700px){body{font-size:16px}.navin{min-height:66px}.brand span{font-size:14px}.logo{width:36px;height:32px}.actions .pill{padding:8px 10px;font-size:13px}.hero{padding:48px 0 28px}h1{font-size:clamp(34px,10vw,52px)}.lead{font-size:18px}.toc ol{columns:1}section{padding:22px 20px;border-radius:15px}h2{font-size:24px}.wrap{width:min(94%,920px)}}
-
-/* V23 — تنسيق تحريري رسمي موحد للنصوص */
-:where(p,.intro,.desc,.lead,.card p,.tool p,.contact span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+/* V26 — formal editorial text alignment */
+/* Body copy only: headings/buttons remain naturally aligned. */
+main p, main li, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
   text-align: justify;
   text-justify: inter-word;
-  text-align-last: right;
+  word-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
   overflow-wrap: break-word;
+  hyphens: none;
+  text-align-last: auto;
 }
-:where(.hero h1,.hero h2,.title,.section-title,.eyebrow,.label,h3,h4){
-  text-align: right;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+html[dir="rtl"] main p, html[dir="rtl"] main li, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
+  direction: rtl;
+  text-align: justify;
+  text-align-last: right;
+  text-justify: inter-word;
 }
-@media (max-width:850px){
-  :where(p,.intro,.desc,.lead,.card p,.tool p,.contact span,.contact p,.article-card p,.article-body p,.article-content p,.summary,.excerpt){
-    width: 100%;
-    max-width: 100%;
+html[dir="ltr"] main p, html[dir="ltr"] main li, html[dir="ltr"] .intro, html[dir="ltr"] .desc, html[dir="ltr"] .hero-description, html[dir="ltr"] .article-body p, html[dir="ltr"] .card p, html[dir="ltr"] .tool p, html[dir="ltr"] .contact span {
+  direction: ltr;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+}
+.hero .lead { text-wrap: wrap; }
+@media (max-width: 620px) {
+  main p, main li, .intro, .desc, .hero-description, .article-body p, .card p, .tool p, .contact span {
     text-align: justify;
+    text-justify: inter-word;
+    word-spacing: normal;
+    letter-spacing: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+  html[dir="rtl"] main p, html[dir="rtl"] main li, html[dir="rtl"] .intro, html[dir="rtl"] .desc, html[dir="rtl"] .hero-description, html[dir="rtl"] .article-body p, html[dir="rtl"] .card p, html[dir="rtl"] .tool p, html[dir="rtl"] .contact span {
     text-align-last: right;
-    line-height: 1.9;
+  }
+  html[dir="ltr"] main p, html[dir="ltr"] main li, html[dir="ltr"] .intro, html[dir="ltr"] .desc, html[dir="ltr"] .hero-description, html[dir="ltr"] .article-body p, html[dir="ltr"] .card p, html[dir="ltr"] .tool p, html[dir="ltr"] .contact span {
+    text-align-last: left;
   }
 }
+
 </style></head><body><header class="nav"><div class="navin"><a class="brand" href="../index-ar.html"><svg aria-hidden="true" class="logo" viewbox="0 0 64 56"><path d="M3 52 27 3h13L15 52H3Z" fill="#d8aa45"></path><path d="M27 3h13l21 49H48L35 20 27 3Z" fill="#fff"></path><path d="m27 32 8-15 9 18H31l-4-3Z" fill="#d8aa45"></path></svg><span>Aly Abdelaziz<small>HR • Development • Future of Work</small></span></a><div class="actions"><a class="pill" href="../articles-ar.html">← مكتبة المقالات</a><a class="pill" href="career-shift-en.html">English</a></div></div></header><main><div class="hero"><div class="wrap"><span class="tag">التحول المهني إلى HR</span><h1>كيف تقوم بعمل تحول مهني إلى الموارد البشرية دون أن تبدأ من الصفر؟</h1><p class="lead">خارطة عملية لتحويل خبرتك السابقة إلى قيمة قابلة للإثبات في وظائف الموارد البشرية.</p><div class="meta">مقال تحليلي وعملي · مقال معمّق</div><img alt="التحول المهني إلى HR" class="heroimg" loading="eager" src="../assets/article-04.svg"/></div></div><div class="content"><div class="wrap"><nav class="toc"><h3>داخل المقال</h3><ol><li><a href="#s1">التحول المهني ليس محوًا للماضي</a></li><li><a href="#s2">1. اختر نقطة دخول محددة</a></li><li><a href="#s3">2. اعمل تحليل فجوة</a></li><li><a href="#s4">3. تعلم الأساسيات التي يحتاجها المسار</a></li><li><a href="#s5">4. حوّل خبرتك إلى أدلة HR</a></li><li><a href="#s6">5. أنشئ Portfolio صغيرًا</a></li><li><a href="#s7">6. أعد بناء CV وLinkedIn</a></li><li><a href="#s8">7. احصل على خبرة حقيقية صغيرة</a></li><li><a href="#s9">8. استخدم الشبكات بذكاء</a></li><li><a href="#s10">9. استعد للمقابلة بمنهج STAR</a></li><li><a href="#s11">خطة 90 يومًا</a></li><li><a href="#s12">الخلاصة</a></li><li><a href="#extra-1">كيف تختار أول وظيفة HR بعد التحول</a></li><li><a href="#extra-2">مثال على تحويل الخبرة</a></li><li><a href="#extra-3">ما الذي يجعل Portfolio مقنعًا؟</a></li><li><a href="#extra-4">اختبار الجاهزية للمقابلة</a></li></ol></nav><section id="s1"><h2>التحول المهني ليس محوًا للماضي</h2><p>أكبر خطأ هو التعامل مع التحول إلى HR كأنك تعيد بناء سيرتك من الصفر. خبرتك السابقة قد تكون أصلًا مصدر قوة: المبيعات تعطيك فهم العميل والإقناع، خدمة العملاء تعطيك التواصل وإدارة المواقف، العمليات تعطيك الانضباط وتحسين الإجراءات، والإدارة تعطيك التنسيق واتخاذ القرار.</p></section><section id="s2"><h2>1. اختر نقطة دخول محددة</h2><p>لا تقل "أريد العمل في HR" فقط. حدد مسارًا أوليًا مثل Talent Acquisition، HR Operations، Learning، Employee Relations، People Analytics أو HR Generalist. كل مسار له فجوة معرفة وأدلة مختلفة.</p></section><section id="s3"><h2>2. اعمل تحليل فجوة</h2><p>اكتب متطلبات 10 إعلانات لوظائف مستهدفة، ثم صنفها إلى معرفة HR، أدوات، مهارات سلوكية وخبرة عملية. حدد أعلى خمس فجوات يمكن إغلاقها خلال 60–90 يومًا.</p></section><section id="s4"><h2>3. تعلم الأساسيات التي يحتاجها المسار</h2><p>افهم دورة حياة الموظف، التوظيف، onboarding، الأداء، التعويضات، علاقات الموظفين، قانون العمل المحلي، التحليلات، وأساسيات أنظمة HRIS بحسب المسار. لا تجمع شهادات بلا هدف؛ تعلم ما يخدم وظيفة محددة.</p></section><section id="s5"><h2>4. حوّل خبرتك إلى أدلة HR</h2><p>بدل "لدي مهارات تواصل" اكتب: "أدرت شكاوى العملاء ورفعت حل المشكلة من المحاولة الأولى". ثم ترجم المهارة إلى HR: مقابلات، employee experience، حل النزاعات، إدارة أصحاب المصلحة. الدليل أقوى من الصفة.</p></section><section id="s6"><h2>5. أنشئ Portfolio صغيرًا</h2><p>صمم نماذج عملية: scorecard للتوظيف، onboarding checklist، نموذج مقابلة منظمة، تحليل turnover، خطة تعلم، أو dashboard بسيط. استخدم بيانات افتراضية أو مجهولة ولا تكشف معلومات صاحب عمل سابق.</p></section><section id="s7"><h2>6. أعد بناء CV وLinkedIn</h2><p>العنوان المهني يجب أن يوضح القيمة والاتجاه الجديد. ركز على الإنجازات القابلة للنقل، وضع كلمات HR التي تطابق الوظائف المستهدفة بصدق. لا تخفي تاريخك السابق؛ أعد تفسيره.</p></section><section id="s8"><h2>7. احصل على خبرة حقيقية صغيرة</h2><p>مشروع داخلي، تطوع مهني، مساعدة في التوظيف، مشروع تحليلات أو دعم onboarding يمكن أن يصبح دليلًا عمليًا. المطلوب ليس لقب HR فورًا؛ المطلوب أول دليل قابل للمناقشة في مقابلة.</p></section><section id="s9"><h2>8. استخدم الشبكات بذكاء</h2><p>لا تطلب من شخص أن "يوظفك" مباشرة. اطلب 15 دقيقة لفهم المسار، اعرض مشروعًا صغيرًا، اسأل عن المهارات الناقصة، واطلب feedback. العلاقات المهنية تنمو عندما تقدم قيمة وتحترم وقت الطرف الآخر.</p></section><section id="s10"><h2>9. استعد للمقابلة بمنهج STAR</h2><p>حضّر مواقف من خبرتك السابقة تثبت القيادة، حل المشكلات، التعامل مع عميل صعب، العمل تحت الضغط، وتحسين العملية. ثم اربط كل موقف بما يهم HR بدل تكرار تعريفات نظرية.</p></section><section id="s11"><h2>خطة 90 يومًا</h2><p>الأيام 1–30: اختيار المسار وتحليل الفجوة والتعلم الأساسي. 31–60: تنفيذ مشروع Portfolio وبناء حضور مهني والتواصل مع ممارسين. 61–90: التقديم المستهدف، المقابلات التجريبية، وتعديل الرسالة المهنية بناءً على feedback.</p></section><section id="s12"><h2>الخلاصة</h2><p>التحول المهني الناجح لا يعتمد على إقناع السوق بأنك شخص جديد، بل على إظهار كيف أصبحت خبرتك السابقة أكثر قيمة بعد ربطها بمعرفة HR وأدلة عملية. لا تبدأ من الصفر؛ ابدأ من رأس مالك المهني الحالي.</p></section><section id="extra-1"><h2>كيف تختار أول وظيفة HR بعد التحول</h2><p>إذا كانت خبرتك السابقة في خدمة العملاء، فقد تكون HR Operations أو Employee Experience نقطة منطقية. إذا كنت في المبيعات، فقد تناسبك Talent Acquisition أو التدريب المرتبط بالمبيعات. إذا كنت قويًا في الأرقام، People Analytics قد تكون مدخلًا. لا تبحث عن "أفضل وظيفة HR"؛ ابحث عن أقصر جسر بين رأس مالك الحالي ومتطلبات وظيفة يمكن إثباتها.</p></section><section id="extra-2"><h2>مثال على تحويل الخبرة</h2><p>"تعاملت مع شكاوى العملاء" يمكن تحويلها إلى "إدارة حالات حساسة، الاستماع النشط، تحليل السبب الجذري وحل النزاعات". "أدرت فريق مبيعات" يمكن أن تصبح "تحديد أهداف، coaching، متابعة الأداء وإدارة الحوافز". لا تغيّر الحقيقة؛ غيّر زاوية عرضها لتصبح مرتبطة بالوظيفة المستهدفة.</p></section><section id="extra-3"><h2>ما الذي يجعل Portfolio مقنعًا؟</h2><p>المشروع المقنع ليس ملفًا جميلًا فقط. يجب أن يوضح المشكلة، الافتراضات، الطريقة، المخرج، وما الذي ستقيسه. مثال: dashboard لدوران الموظفين ببيانات افتراضية مع تحليل segmented turnover وتوصيات. عند المقابلة، اشرح لماذا اخترت المؤشر وكيف ستمنع تفسير الارتباط على أنه سببية.</p></section><section id="extra-4"><h2>اختبار الجاهزية للمقابلة</h2><p>هل تستطيع شرح مسارك في 60 ثانية؟ هل لديك ثلاثة أمثلة STAR؟ هل تستطيع شرح وظيفة HR المستهدفة؟ هل تملك دليلًا عمليًا واحدًا على الأقل؟ هل تعرف فجوتين ما زلت تعمل عليهما؟ هل تستطيع الإجابة عن سؤال "لماذا HR؟" دون التقليل من خبرتك السابقة؟ إذا نعم، فأنت تبني قصة انتقال مقنعة.</p></section><div class="cta"><strong>فكرة عملية:</strong> لا تبدأ بالحل. ابدأ بتعريف المشكلة، جمع الأدلة، اختبار الفرضيات، ثم اختر تدخلًا يمكن قياس أثره.</div></div></div></main><footer>جميع الحقوق محفوظة © Aly Abdelaziz</footer></body></html>
