@@ -1,10 +1,10 @@
-ARTICLE LIBRARY
+V15 article library
 
-To add a new article later:
-1. Open articles-data.js.
-2. Add a new object to both the en and ar arrays using a unique id, title, category, excerpt, cover, read, and content.
-3. Keep the same cover class or add a new one in styles.css.
-4. Upload articles-data.js with the website files.
-5. The article automatically appears on articles.html and articles-ar.html.
+Public pages:
+- articles.html
+- articles-ar.html
 
-The main site links to these article pages. No server or database is required.
+The public article library does not expose an article editor.
+To add new articles, update articles-data.js in your private workflow, then upload the updated file.
+
+Article covers are currently retained from the previous version. Image redesign is intentionally deferred until the article content is approved.
