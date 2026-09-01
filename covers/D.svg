@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#08243d"/><stop offset="1" stop-color="#173e59"/></linearGradient><radialGradient id="r"><stop stop-color="#ffe08a" stop-opacity=".42"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="700" fill="url(#g)"/><circle cx="950" cy="140" r="260" fill="url(#r)"/>
+<g fill="none" stroke="#ffffff" stroke-opacity=".18"><circle cx="970" cy="165" r="150"/><circle cx="970" cy="165" r="105"/><path d="M80 550H1120"/><path d="M80 580H820"/></g>
+<text x="80" y="110" fill="#ffe08a" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="6">CAREER</text>
+<text x="1070" y="620" fill="#ffffff" fill-opacity=".08" font-family="Arial,sans-serif" font-size="230" font-weight="800" text-anchor="end">04</text>
+<text x="80" y="610" fill="#ffffff" font-family="Arial,sans-serif" font-size="42" font-weight="700">Aly Abdelaziz</text>
+<text x="80" y="650" fill="#cfe1ea" font-family="Arial,sans-serif" font-size="22">HR • Career • AI • Future of Work</text>
+</svg>
