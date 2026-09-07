@@ -1,0 +1,4 @@
+window.ALY_SUPABASE = {
+  url: 'https://YOUR_PROJECT.supabase.co',
+  publishableKey: 'YOUR_SUPABASE_PUBLISHABLE_KEY'
+};
